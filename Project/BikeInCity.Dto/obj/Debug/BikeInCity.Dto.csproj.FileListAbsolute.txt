@@ -1,0 +1,5 @@
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Dto\bin\Debug\BikeInCity.Dto.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Dto\bin\Debug\BikeInCity.Dto.pdb
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Dto\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Dto\obj\Debug\BikeInCity.Dto.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Dto\obj\Debug\BikeInCity.Dto.pdb

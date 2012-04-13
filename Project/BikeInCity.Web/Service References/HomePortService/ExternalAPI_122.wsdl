@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tkhs.kite.cz/ExternalServices_1_2_2" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExternalAPI_122" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IExternalAPI_122_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefThumbprint />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://tkhs.kite.cz/ExternalServices_1_2_2" location="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="WSHttpBinding_IExternalAPI_122" type="i0:IExternalAPI_122">
+    <wsp:PolicyReference URI="#WSHttpBinding_IExternalAPI_122_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLanguages">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRules">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetBusinessRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapData">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetMapData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNews">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddresses">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerContacts">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContacts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCards">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssignCard">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnassignCard">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKConcurrencyExceptionFault">
+        <soap12:fault use="literal" name="TKConcurrencyExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddContract">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddress">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKConcurrencyExceptionFault">
+        <soap12:fault use="literal" name="TKConcurrencyExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKConcurrencyExceptionFault">
+        <soap12:fault use="literal" name="TKConcurrencyExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddContact">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKConcurrencyExceptionFault">
+        <soap12:fault use="literal" name="TKConcurrencyExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKConcurrencyExceptionFault">
+        <soap12:fault use="literal" name="TKConcurrencyExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCredit">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePin">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCard">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKValidationExceptionFault">
+        <soap12:fault use="literal" name="TKValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerRentals">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerRentals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAccountActivities">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAccountActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerContracts">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContracts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TKNotFoundExceptionFault">
+        <soap12:fault use="literal" name="TKNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TKServiceExceptionFault">
+        <soap12:fault use="literal" name="TKServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExternalAPI_122">
+    <wsdl:port name="WSHttpBinding_IExternalAPI_122" binding="tns:WSHttpBinding_IExternalAPI_122">
+      <soap12:address location="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>tkhsdemo02.kite.cz</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

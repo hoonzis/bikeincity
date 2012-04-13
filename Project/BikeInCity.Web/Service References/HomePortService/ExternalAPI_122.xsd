@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" elementFormDefault="qualified" targetNamespace="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TKServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKServiceException" nillable="true" type="tns:TKServiceException" />
+  <xs:complexType name="TKNotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKNotFoundException" nillable="true" type="tns:TKNotFoundException" />
+  <xs:complexType name="TKValidationException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MissingEntityType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MissingFields" nillable="true" type="tns:ArrayOfTKPropertyPath" />
+      <xs:element minOccurs="0" name="TooBigFields" nillable="true" type="tns:ArrayOfTKPropertyPath" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKValidationException" nillable="true" type="tns:TKValidationException" />
+  <xs:complexType name="ArrayOfTKPropertyPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKPropertyPath" nillable="true" type="tns:TKPropertyPath" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKPropertyPath" nillable="true" type="tns:ArrayOfTKPropertyPath" />
+  <xs:complexType name="TKPropertyPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildProperty" nillable="true" type="tns:TKPropertyPath" />
+      <xs:element minOccurs="0" name="PropertyIndex" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKPropertyPath" nillable="true" type="tns:TKPropertyPath" />
+  <xs:complexType name="TKConcurrencyException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKConcurrencyException" nillable="true" type="tns:TKConcurrencyException" />
+</xs:schema>

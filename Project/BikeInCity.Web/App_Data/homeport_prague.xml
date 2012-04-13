@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<stations>
+  <station name="Metro Florenc" lat="50.091017" lng="14.439662"/>
+  <station name="Pošta Karlínské náměstí" lat="50.092792" lng="14.446185"/>
+  <station name="Hotel Ibis Sokolovská" lat="50.094651" lng="14.454124"/>
+  <station name="Křižíkova" lat="50.09282" lng="14.452386"/>
+  <station name="Lyčkovo náměstí" lat="50.09377" lng="14.45745"/>
+  <station name="Metro Invalidovna" lat="50.097087" lng="14.464638"/>
+</stations>

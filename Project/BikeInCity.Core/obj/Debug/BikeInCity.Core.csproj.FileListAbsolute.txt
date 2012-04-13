@@ -1,0 +1,7 @@
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\bin\Debug\BikeInCity.Core.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\bin\Debug\BikeInCity.Core.pdb
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\bin\Debug\BikeInCity.Model.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\bin\Debug\BikeInCity.Model.pdb
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\obj\Debug\BikeInCity.Core.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Core\obj\Debug\BikeInCity.Core.pdb

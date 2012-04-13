@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cities>
+  <city lat="51.506819" lng="-0.136986" name="London" country="England"/>
+  <city lat="48.858391" lng="2.341461" name="Paris" country="France"/>
+  <!--<city lat="41.392264" lng="2.16568" name="Barcelona" country="Spain"/>-->
+  <city lat="39.735178" lng="-104.994965" name="Denver" country="United States"/>
+  <city lat="48.111443" lng="-1.672668" name="Rennes" country="France"/>
+  <city lat="48.20271" lng="16.379929" name="Wien" country="Austria"/>
+  <city lat="39.466945" lng="-0.373535" name="Valencia" country="Spain"/>
+  <city lat="45.758422" lng="4.836216" name="Lyon" country="France"/>
+  <city lat="43.2947" lng="5.375748" name="Marseille" country="France"/>
+  <city lat="43.603516" lng="1.445389" name="Toulouse" country="France"/>
+  <city lat="45.534732" lng="-73.54454" name="Montreal" country="Canada"/>
+  <city lat="49.183611" lng="-0.366154" name="Caen" country="France"/>
+  <city lat="47.3272130" lng="5.0439875" name="Dijon" country="France"/>
+  <city lat="42.7015739" lng="2.8941503" name="Perpignan" country="France"/>
+  <city lat="50.087768" lng="14.41638" name="Prague" country="Czech Republic"/>
+</cities>

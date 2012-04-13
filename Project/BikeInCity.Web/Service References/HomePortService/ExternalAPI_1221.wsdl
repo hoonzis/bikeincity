@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tkhs.kite.cz/ExternalServices_1_2_2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tkhs.kite.cz/ExternalServices_1_2_2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tkhs.kite.cz/ExternalServices_1_2_2/Imports">
+      <xsd:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd0" namespace="http://tkhs.kite.cz/ExternalServices_1_2_2" />
+      <xsd:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd3" namespace="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" />
+      <xsd:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd2" namespace="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" />
+      <xsd:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExternalAPI_122_GetLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetLanguages_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q1:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetBusinessRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessRules" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetBusinessRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetBusinessRules_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q2:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetMapData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapData" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetMapData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetMapData_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q3:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNews" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetNews_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q4:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AuthenticateUser_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q5:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomer_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q6:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomer_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q7:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAddresses_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q8:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAddresses_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q9:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerContacts" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContacts_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q10:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContacts_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q11:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCards" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerCards_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q12:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerCards_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q13:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AssignCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignCard" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AssignCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AssignCard_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q14:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AssignCard_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q15:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AssignCard_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q16:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UnassignCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignCard" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UnassignCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UnassignCard_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q17:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UnassignCard_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q18:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UnassignCard_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q19:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_CreateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_CreateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_CreateCustomer_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q20:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_CreateCustomer_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q21:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_CreateCustomer_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q22:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCustomer_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q23:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCustomer_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q24:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCustomer_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q25:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_TKConcurrencyExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q26:TKConcurrencyException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q27:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q28:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateCustomer_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q29:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddContract" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContract_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q30:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContract_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q31:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContract_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q32:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAddress" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddAddress_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q33:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddAddress_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q34:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddAddress_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q35:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddress" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_TKConcurrencyExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q36:TKConcurrencyException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q37:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q38:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateAddress_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q39:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddress" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q40:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_TKConcurrencyExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q41:TKConcurrencyException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q42:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteAddress_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q43:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddContact" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContact_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q44:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContact_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q45:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddContact_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q46:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContact" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q47:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q48:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q49:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdateContact_TKConcurrencyExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q50:TKConcurrencyException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContact" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q51:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_TKConcurrencyExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q52:TKConcurrencyException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q53:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_DeleteContact_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q54:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCredit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCredit" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCredit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCredit_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q55:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCredit_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q56:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_AddCredit_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q57:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdatePin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePin" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdatePin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdatePin_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q58:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdatePin_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q59:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_UpdatePin_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q60:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GenerateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCard" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GenerateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GenerateCard_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q61:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GenerateCard_TKValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q62:TKValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GenerateCard_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q63:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomers_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q64:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerRentals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerRentals" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerRentals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerRentalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerRentals_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q65:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerRentals_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q66:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAccountActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAccountActivities" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAccountActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAccountActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAccountActivities_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q67:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerAccountActivities_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q68:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerContracts" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContracts_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q69:TKServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCustomerContracts_TKNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q70:TKNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExternalAPI_122_GetCountries_TKServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://tkhs.kite.cz/ExternalServices_1_2_2/Exceptions" name="detail" element="q71:TKServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IExternalAPI_122">
+    <wsdl:operation name="GetLanguages">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetLanguages" message="tns:IExternalAPI_122_GetLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetLanguagesResponse" message="tns:IExternalAPI_122_GetLanguages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetLanguagesTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetLanguages_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRules">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetBusinessRules" message="tns:IExternalAPI_122_GetBusinessRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetBusinessRulesResponse" message="tns:IExternalAPI_122_GetBusinessRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetBusinessRulesTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetBusinessRules_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapData">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetMapData" message="tns:IExternalAPI_122_GetMapData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetMapDataResponse" message="tns:IExternalAPI_122_GetMapData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetMapDataTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetMapData_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNews">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetNews" message="tns:IExternalAPI_122_GetNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetNewsResponse" message="tns:IExternalAPI_122_GetNews_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetNewsTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetNews_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AuthenticateUser" message="tns:IExternalAPI_122_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AuthenticateUserResponse" message="tns:IExternalAPI_122_AuthenticateUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AuthenticateUserTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AuthenticateUser_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomer" message="tns:IExternalAPI_122_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerResponse" message="tns:IExternalAPI_122_GetCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomer_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomer_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddresses">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAddresses" message="tns:IExternalAPI_122_GetCustomerAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAddressesResponse" message="tns:IExternalAPI_122_GetCustomerAddresses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAddressesTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerAddresses_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAddressesTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerAddresses_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerContacts">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContacts" message="tns:IExternalAPI_122_GetCustomerContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContactsResponse" message="tns:IExternalAPI_122_GetCustomerContacts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContactsTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerContacts_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContactsTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerContacts_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCards">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerCards" message="tns:IExternalAPI_122_GetCustomerCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerCardsResponse" message="tns:IExternalAPI_122_GetCustomerCards_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerCardsTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerCards_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerCardsTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerCards_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignCard">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCard" message="tns:IExternalAPI_122_AssignCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCardResponse" message="tns:IExternalAPI_122_AssignCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCardTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AssignCard_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCardTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AssignCard_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AssignCardTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AssignCard_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnassignCard">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCard" message="tns:IExternalAPI_122_UnassignCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCardResponse" message="tns:IExternalAPI_122_UnassignCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCardTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_UnassignCard_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCardTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_UnassignCard_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UnassignCardTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_UnassignCard_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomer" message="tns:IExternalAPI_122_CreateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomerResponse" message="tns:IExternalAPI_122_CreateCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomerTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_CreateCustomer_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomerTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_CreateCustomer_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/CreateCustomerTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_CreateCustomer_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomer" message="tns:IExternalAPI_122_AddCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomerResponse" message="tns:IExternalAPI_122_AddCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomerTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AddCustomer_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomerTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AddCustomer_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCustomerTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AddCustomer_TKValidationExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomer" message="tns:IExternalAPI_122_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomerResponse" message="tns:IExternalAPI_122_UpdateCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomerTKConcurrencyExceptionFault" name="TKConcurrencyExceptionFault" message="tns:IExternalAPI_122_UpdateCustomer_TKConcurrencyExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomerTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_UpdateCustomer_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomerTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_UpdateCustomer_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateCustomerTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_UpdateCustomer_TKValidationExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContract">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContract" message="tns:IExternalAPI_122_AddContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContractResponse" message="tns:IExternalAPI_122_AddContract_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContractTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AddContract_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContractTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AddContract_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContractTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AddContract_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddress" message="tns:IExternalAPI_122_AddAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddressResponse" message="tns:IExternalAPI_122_AddAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddressTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AddAddress_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddressTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AddAddress_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddAddressTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AddAddress_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddress">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddress" message="tns:IExternalAPI_122_UpdateAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddressResponse" message="tns:IExternalAPI_122_UpdateAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddressTKConcurrencyExceptionFault" name="TKConcurrencyExceptionFault" message="tns:IExternalAPI_122_UpdateAddress_TKConcurrencyExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddressTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_UpdateAddress_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddressTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_UpdateAddress_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateAddressTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_UpdateAddress_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddress" message="tns:IExternalAPI_122_DeleteAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddressResponse" message="tns:IExternalAPI_122_DeleteAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddressTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_DeleteAddress_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddressTKConcurrencyExceptionFault" name="TKConcurrencyExceptionFault" message="tns:IExternalAPI_122_DeleteAddress_TKConcurrencyExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddressTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_DeleteAddress_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteAddressTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_DeleteAddress_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContact">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContact" message="tns:IExternalAPI_122_AddContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContactResponse" message="tns:IExternalAPI_122_AddContact_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContactTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AddContact_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContactTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AddContact_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddContactTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AddContact_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContact" message="tns:IExternalAPI_122_UpdateContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContactResponse" message="tns:IExternalAPI_122_UpdateContact_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContactTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_UpdateContact_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContactTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_UpdateContact_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContactTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_UpdateContact_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdateContactTKConcurrencyExceptionFault" name="TKConcurrencyExceptionFault" message="tns:IExternalAPI_122_UpdateContact_TKConcurrencyExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContact" message="tns:IExternalAPI_122_DeleteContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContactResponse" message="tns:IExternalAPI_122_DeleteContact_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContactTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_DeleteContact_TKNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContactTKConcurrencyExceptionFault" name="TKConcurrencyExceptionFault" message="tns:IExternalAPI_122_DeleteContact_TKConcurrencyExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContactTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_DeleteContact_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/DeleteContactTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_DeleteContact_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCredit">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCredit" message="tns:IExternalAPI_122_AddCredit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCreditResponse" message="tns:IExternalAPI_122_AddCredit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCreditTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_AddCredit_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCreditTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_AddCredit_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/AddCreditTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_AddCredit_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePin">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePin" message="tns:IExternalAPI_122_UpdatePin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePinResponse" message="tns:IExternalAPI_122_UpdatePin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePinTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_UpdatePin_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePinTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_UpdatePin_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/UpdatePinTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_UpdatePin_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCard">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCard" message="tns:IExternalAPI_122_GenerateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCardResponse" message="tns:IExternalAPI_122_GenerateCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCardTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GenerateCard_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCardTKValidationExceptionFault" name="TKValidationExceptionFault" message="tns:IExternalAPI_122_GenerateCard_TKValidationExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GenerateCardTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GenerateCard_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomers" message="tns:IExternalAPI_122_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomersResponse" message="tns:IExternalAPI_122_GetCustomers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomersTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomers_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerRentals">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerRentals" message="tns:IExternalAPI_122_GetCustomerRentals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerRentalsResponse" message="tns:IExternalAPI_122_GetCustomerRentals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerRentalsTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerRentals_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerRentalsTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerRentals_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAccountActivities">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAccountActivities" message="tns:IExternalAPI_122_GetCustomerAccountActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAccountActivitiesResponse" message="tns:IExternalAPI_122_GetCustomerAccountActivities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAccountActivitiesTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerAccountActivities_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerAccountActivitiesTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerAccountActivities_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerContracts">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContracts" message="tns:IExternalAPI_122_GetCustomerContracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContractsResponse" message="tns:IExternalAPI_122_GetCustomerContracts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContractsTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCustomerContracts_TKServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCustomerContractsTKNotFoundExceptionFault" name="TKNotFoundExceptionFault" message="tns:IExternalAPI_122_GetCustomerContracts_TKNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCountries" message="tns:IExternalAPI_122_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCountriesResponse" message="tns:IExternalAPI_122_GetCountries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tkhs.kite.cz/ExternalServices_1_2_2/IExternalAPI_122/GetCountriesTKServiceExceptionFault" name="TKServiceExceptionFault" message="tns:IExternalAPI_122_GetCountries_TKServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

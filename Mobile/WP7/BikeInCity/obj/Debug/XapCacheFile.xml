@@ -1,0 +1,43 @@
+﻿<xapCache source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\BikeInCity.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="09/04/2012 10:37:08">
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="08/11/2011 16:03:48" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\LargeIcon.png" archivePath="LargeIcon.png" lastWriteTime="08/11/2011 16:03:48" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="08/11/2011 16:03:48" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\obj\Debug\BikeInCity.dll" archivePath="BikeInCity.dll" lastWriteTime="09/04/2012 10:37:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="15/09/2011 15:34:20" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="15/09/2011 15:34:20" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\obj\Debug\en-GB\BikeInCity.resources.dll" archivePath="en-GB\BikeInCity.resources.dll" lastWriteTime="09/04/2012 10:37:07" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\obj\Debug\en-US\BikeInCity.resources.dll" archivePath="en-US\BikeInCity.resources.dll" lastWriteTime="09/04/2012 10:37:07" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\obj\Debug\fr-FR\BikeInCity.resources.dll" archivePath="fr-FR\BikeInCity.resources.dll" lastWriteTime="09/04/2012 10:37:07" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\ApplicationBar\All.png" archivePath="Icons\ApplicationBar\All.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\ApplicationBar\DirectionsBlack.png" archivePath="Icons\ApplicationBar\DirectionsBlack.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Zoom\ZoomIn_Black.png" archivePath="Icons\Zoom\ZoomIn_Black.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Zoom\ZoomIn_White.png" archivePath="Icons\Zoom\ZoomIn_White.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Zoom\ZoomOut_Black.png" archivePath="Icons\Zoom\ZoomOut_Black.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Zoom\ZoomOut_White.png" archivePath="Icons\Zoom\ZoomOut_White.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\ApplicationBar\Directions.png" archivePath="Icons\ApplicationBar\Directions.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\ApplicationBar\Location.png" archivePath="Icons\ApplicationBar\Location.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\ApplicationBar\Search.png" archivePath="Icons\ApplicationBar\Search.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Buttons\PlayCircleBlack.png" archivePath="Icons\Buttons\PlayCircleBlack.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Buttons\PlayCircleWhite.png" archivePath="Icons\Buttons\PlayCircleWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Others\NextWhite.png" archivePath="Icons\Others\NextWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Others\BicycleWhite.png" archivePath="Icons\Others\BicycleWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Icons\Others\HouseWhite.png" archivePath="Icons\Others\HouseWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="08/02/2012 22:30:09" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\ApplicationBar\All.png" archivePath="Icons\ApplicationBar\All.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\ApplicationBar\DirectionsBlack.png" archivePath="Icons\ApplicationBar\DirectionsBlack.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Zoom\ZoomIn_Black.png" archivePath="Icons\Zoom\ZoomIn_Black.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Zoom\ZoomIn_White.png" archivePath="Icons\Zoom\ZoomIn_White.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Zoom\ZoomOut_Black.png" archivePath="Icons\Zoom\ZoomOut_Black.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Zoom\ZoomOut_White.png" archivePath="Icons\Zoom\ZoomOut_White.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\ApplicationBar\Directions.png" archivePath="Icons\ApplicationBar\Directions.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\ApplicationBar\Location.png" archivePath="Icons\ApplicationBar\Location.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\ApplicationBar\Search.png" archivePath="Icons\ApplicationBar\Search.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Buttons\PlayCircleBlack.png" archivePath="Icons\Buttons\PlayCircleBlack.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Buttons\PlayCircleWhite.png" archivePath="Icons\Buttons\PlayCircleWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Others\NextWhite.png" archivePath="Icons\Others\NextWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Others\BicycleWhite.png" archivePath="Icons\Others\BicycleWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\Icons\Others\HouseWhite.png" archivePath="Icons\Others\HouseWhite.png" lastWriteTime="08/11/2011 16:03:49" />
+  <file source="E:\projects\BikeInCity\branches\version3\Mobile\WP7\BikeInCity\Bin\Debug\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="08/11/2011 16:03:49" />
+</xapCache>

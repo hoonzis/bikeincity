@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="cf86157e-ea6f-400b-a5f4-1dfeecc9fbe4" name="jfa@OCTO-JFA 2012-03-31 17:11:14" runUser="octo-jfa\jfa" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0589d539-8ce4-4cad-a18b-b77c1c62e443">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jfa_OCTO-JFA 2012-03-31 17_11_14">
+      <DeploymentItem filename="E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Web\bin\BikeInCity.Web.dll" />
+      <DeploymentItem filename="E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Model\bin\Debug\BikeInCity.Model.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-31T17:11:14.4909153+02:00" queuing="2012-03-31T17:11:14.5649195+02:00" start="2012-03-31T17:11:14.5749201+02:00" finish="2012-03-31T17:13:02.6511017+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ValenciaProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="8ef16d7c-5c71-5844-d1fc-5e3d63942266">
+      <Execution id="1c7d8ac8-569f-46f9-a3eb-7ca23ff2f45e" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.ValenciaTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ValenciaProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="MarseilleProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="7ae46abc-6c4e-edfd-fbca-5c82e2a16a33">
+      <Execution id="e8670b80-429e-44aa-ba0a-ee2c1391be64" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.MarseilleTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MarseilleProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="ToulouseProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="b3e68e82-d7d2-ce03-15cc-f2d6b809d9a2">
+      <Execution id="4a274f4d-063f-44d8-af8a-73174126242a" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.ToulouseTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ToulouseProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="WienProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="ce44f444-05b9-272a-a5a9-c9e37c55fc1b">
+      <Execution id="360df7c8-692c-456d-85df-1e402ddcc519" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.WienTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WienProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="LyonProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="29a3df48-47a1-0ac2-4288-ea6138a98425">
+      <Execution id="4efbe282-72ca-4e9b-99c2-8f8cd998f5c3" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.LyonTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LyonProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="PragueProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="42f2e8be-2ad1-fb31-01f5-442bf72b07c5">
+      <Execution id="8d42b703-5a8c-42cc-8dd4-bd62408de5aa" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.PragueTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PragueProcessCityTest" />
+    </UnitTest>
+    <UnitTest name="DenverProcessCityTest" storage="e:\projects\bikeincity\branches\version3\project\bikeincity.tests\bin\debug\unittests.dll" id="95dde295-09e7-5b13-a85a-87d321262a0c">
+      <Execution id="be206a23-d9a0-48c2-9a8a-d1e9dc769c16" />
+      <TestMethod codeBase="E:/projects/BikeInCity/branches/version3/Project/BikeInCity.Tests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.DenverTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DenverProcessCityTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="29a3df48-47a1-0ac2-4288-ea6138a98425" executionId="4efbe282-72ca-4e9b-99c2-8f8cd998f5c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42f2e8be-2ad1-fb31-01f5-442bf72b07c5" executionId="8d42b703-5a8c-42cc-8dd4-bd62408de5aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ae46abc-6c4e-edfd-fbca-5c82e2a16a33" executionId="e8670b80-429e-44aa-ba0a-ee2c1391be64" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8ef16d7c-5c71-5844-d1fc-5e3d63942266" executionId="1c7d8ac8-569f-46f9-a3eb-7ca23ff2f45e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="95dde295-09e7-5b13-a85a-87d321262a0c" executionId="be206a23-d9a0-48c2-9a8a-d1e9dc769c16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3e68e82-d7d2-ce03-15cc-f2d6b809d9a2" executionId="4a274f4d-063f-44d8-af8a-73174126242a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce44f444-05b9-272a-a5a9-c9e37c55fc1b" executionId="360df7c8-692c-456d-85df-1e402ddcc519" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4efbe282-72ca-4e9b-99c2-8f8cd998f5c3" testId="29a3df48-47a1-0ac2-4288-ea6138a98425" testName="LyonProcessCityTest" computerName="OCTO-JFA" duration="00:00:48.6005444" startTime="2012-03-31T17:11:14.6069219+02:00" endTime="2012-03-31T17:12:02.9386863+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4efbe282-72ca-4e9b-99c2-8f8cd998f5c3">
+      <Output>
+        <StdOut>Error Lyon</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8d42b703-5a8c-42cc-8dd4-bd62408de5aa" testId="42f2e8be-2ad1-fb31-01f5-442bf72b07c5" testName="PragueProcessCityTest" computerName="OCTO-JFA" duration="00:00:00.0026221" startTime="2012-03-31T17:12:02.9396864+02:00" endTime="2012-03-31T17:12:02.9456867+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d42b703-5a8c-42cc-8dd4-bd62408de5aa">
+    </UnitTestResult>
+    <UnitTestResult executionId="e8670b80-429e-44aa-ba0a-ee2c1391be64" testId="7ae46abc-6c4e-edfd-fbca-5c82e2a16a33" testName="MarseilleProcessCityTest" computerName="OCTO-JFA" duration="00:00:07.1258341" startTime="2012-03-31T17:12:02.9476869+02:00" endTime="2012-03-31T17:12:10.0690942+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8670b80-429e-44aa-ba0a-ee2c1391be64">
+      <Output>
+        <StdOut>System.IO.DirectoryNotFoundException: Could not find a part of the path 'E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Tests\bin\Debuglogs\log.txt'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at Logger.WriteMessage(String message) in E:\projects\BikeInCity\branches\version3\Project\BikeInCity.Web\Technical\Logger.cs:line 17</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1c7d8ac8-569f-46f9-a3eb-7ca23ff2f45e" testId="8ef16d7c-5c71-5844-d1fc-5e3d63942266" testName="ValenciaProcessCityTest" computerName="OCTO-JFA" duration="00:00:27.8627566" startTime="2012-03-31T17:12:10.0710943+02:00" endTime="2012-03-31T17:12:37.9156869+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c7d8ac8-569f-46f9-a3eb-7ca23ff2f45e">
+    </UnitTestResult>
+    <UnitTestResult executionId="be206a23-d9a0-48c2-9a8a-d1e9dc769c16" testId="95dde295-09e7-5b13-a85a-87d321262a0c" testName="DenverProcessCityTest" computerName="OCTO-JFA" duration="00:00:03.2808698" startTime="2012-03-31T17:12:37.9186871+02:00" endTime="2012-03-31T17:12:41.2008748+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be206a23-d9a0-48c2-9a8a-d1e9dc769c16">
+    </UnitTestResult>
+    <UnitTestResult executionId="4a274f4d-063f-44d8-af8a-73174126242a" testId="b3e68e82-d7d2-ce03-15cc-f2d6b809d9a2" testName="ToulouseProcessCityTest" computerName="OCTO-JFA" duration="00:00:18.8478501" startTime="2012-03-31T17:12:41.2038750+02:00" endTime="2012-03-31T17:13:00.0399524+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a274f4d-063f-44d8-af8a-73174126242a">
+    </UnitTestResult>
+    <UnitTestResult executionId="360df7c8-692c-456d-85df-1e402ddcc519" testId="ce44f444-05b9-272a-a5a9-c9e37c55fc1b" testName="WienProcessCityTest" computerName="OCTO-JFA" duration="00:00:02.2295734" startTime="2012-03-31T17:13:00.0419525+02:00" endTime="2012-03-31T17:13:02.2750802+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="360df7c8-692c-456d-85df-1e402ddcc519">
+    </UnitTestResult>
+  </Results>
+</TestRun>

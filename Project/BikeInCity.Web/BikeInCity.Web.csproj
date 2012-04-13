@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{297FC21F-FBEE-456D-8FE1-71E413539C4C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BikeInCity.Web</RootNamespace>
+    <AssemblyName>BikeInCity.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplicationList>
+    </SilverlightApplicationList>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Wcf">
+      <HintPath>..\packages\Ninject.Extensions.Wcf.2.2.0.4\lib\net40-Full\Ninject.Extensions.Wcf.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web">
+      <HintPath>..\packages\Ninject.Web.2.2.0.4\lib\net40-Full\Ninject.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.1.0.3\lib\3.5\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="App_Data\cityList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\homeport_prague.xml" />
+    <Content Include="clientaccesspolicy.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.all.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.base.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\about.css" />
+    <Content Include="css\informations-styles.css" />
+    <Content Include="css\mobile.css" />
+    <Content Include="css\default.css" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\ui-lightness\jquery-ui-1.8.14.custom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Img\android.png" />
+    <Content Include="Img\iphone.png" />
+    <Content Include="Img\small_cycler.png" />
+    <Content Include="Img\star_green.png" />
+    <Content Include="Img\star_red.png" />
+    <Content Include="Img\station_green.png" />
+    <Content Include="Img\station_orange.png" />
+    <Content Include="Img\station_red.png" />
+    <Content Include="Img\logo.gif" />
+    <Content Include="Img\wp7.png" />
+    <Content Include="Img\wp7\5nearest.PNG" />
+    <Content Include="Img\wp7\allstations.PNG" />
+    <Content Include="Img\wp7\city.PNG" />
+    <Content Include="Img\wp7\directions.PNG" />
+    <Content Include="Img\wp7\find.PNG" />
+    <Content Include="Img\wp7\settings.PNG" />
+    <Content Include="Scripts\biking.js" />
+    <Content Include="Scripts\infobox.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\modernizr-2.0.6.js" />
+    <Content Include="Pages\Admin.aspx" />
+    <Content Include="Informations.aspx" />
+    <Content Include="Phone.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKAccountActivities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKAuthenticationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKBusinessRule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKContact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKContracts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKCountry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKCustomers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKLanguage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKMapData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKNews.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\BikeInCity.Web.HomePortService.TKRentals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HomePortService\ExternalAPI_122.disco" />
+    <None Include="Service References\HomePortService\configuration91.svcinfo" />
+    <None Include="Service References\HomePortService\configuration.svcinfo" />
+    <None Include="Service References\HomePortService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\knockout-2.0.0.debug.js" />
+    <Content Include="Scripts\knockout-2.0.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Services\Bike.svc" />
+    <Content Include="Services\BikeService.svc" />
+    <Content Include="Services\Info.svc" />
+    <Content Include="Default.aspx" />
+    <Content Include="css\master.css" />
+    <Content Include="ViewModels\CityViewModel.js" />
+    <Content Include="ViewModels\CountryViewModel.js" />
+    <Content Include="ViewModels\StationViewModel.js" />
+    <Content Include="ViewModels\TipViewModel.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\HomePortService\ExternalAPI_122.wsdl" />
+    <None Include="Service References\HomePortService\ExternalAPI_1221.wsdl" />
+    <None Include="Service References\HomePortService\ExternalAPI_1221.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HomePortService\ExternalAPI_1222.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HomePortService\ExternalAPI_1223.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HomePortService\ExternalAPI_1224.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Services\Upload.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BikeMaster.Master.cs">
+      <DependentUpon>BikeMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BikeMaster.Master.designer.cs">
+      <DependentUpon>BikeMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Biking\Barcelona.cs" />
+    <Compile Include="Biking\Brno.cs" />
+    <Compile Include="Biking\Caen.cs" />
+    <Compile Include="Biking\CityBike.cs" />
+    <Compile Include="Biking\Decaux.cs" />
+    <Compile Include="Biking\Denver.cs" />
+    <Compile Include="Biking\Dijon.cs" />
+    <Compile Include="Biking\HomePort.cs" />
+    <Compile Include="Biking\IBikeCity.cs" />
+    <Compile Include="Biking\London.cs" />
+    <Compile Include="Biking\Lyon.cs" />
+    <Compile Include="Biking\LyonMarker.cs" />
+    <Compile Include="Biking\Marseille.cs" />
+    <Compile Include="Biking\Montreal.cs" />
+    <Compile Include="Biking\NextBike.cs" />
+    <Compile Include="Biking\Oybike.cs" />
+    <Compile Include="Biking\Paris.cs" />
+    <Compile Include="Biking\Perpignan.cs" />
+    <Compile Include="Biking\Prague.cs" />
+    <Compile Include="Biking\Rennes.cs" />
+    <Compile Include="Biking\Toulouse.cs" />
+    <Compile Include="Biking\Valencia.cs" />
+    <Compile Include="Biking\Wien.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BikeService.svc.cs">
+      <DependentUpon>BikeService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Mapper.cs" />
+    <Compile Include="Pages\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informations.aspx.cs">
+      <DependentUpon>Informations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informations.aspx.designer.cs">
+      <DependentUpon>Informations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HomePortService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Info.svc.cs">
+      <DependentUpon>Info.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Upload.ashx.cs">
+      <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\BikeTask.cs" />
+    <Compile Include="Technical\BICWebModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Bike.svc.cs">
+      <DependentUpon>Bike.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\SessionFactoryProvider.cs" />
+    <Compile Include="Technical\WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BikeMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HomePortService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HomePortService\ExternalAPI_122.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BikeInCity.Core\BikeInCity.Core.csproj">
+      <Project>{E304D61E-0A82-4E4D-AD69-3C79CC41739B}</Project>
+      <Name>BikeInCity.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BikeInCity.DataAccess\BikeInCity.DataAccess.csproj">
+      <Project>{4CD127F4-16D6-44BB-B27D-10331851E13C}</Project>
+      <Name>BikeInCity.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BikeInCity.Dto\BikeInCity.Dto.csproj">
+      <Project>{39795951-10D7-442B-84A5-1E6EB69F4C55}</Project>
+      <Name>BikeInCity.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BikeInCity.Model\BikeInCity.Model.csproj">
+      <Project>{3162D860-948E-4B23-9430-DCC531D85412}</Project>
+      <Name>BikeInCity.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BikeInCity.Services\BikeInCity.Services.csproj">
+      <Project>{73D6731B-6F4F-487A-9663-E8C159961ABC}</Project>
+      <Name>BikeInCity.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1300</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/BikeInCity</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

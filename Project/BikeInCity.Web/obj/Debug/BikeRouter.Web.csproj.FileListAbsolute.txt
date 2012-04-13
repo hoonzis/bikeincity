@@ -1,0 +1,5 @@
+E:\projects\BikeInCity\branches\version3\Project\BikeRouter.Web\bin\BikeRouter.Web2.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeRouter.Web\bin\BikeRouter.Web2.pdb
+E:\projects\BikeInCity\branches\version3\Project\BikeRouter.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\BikeInCity\branches\version3\Project\BikeRouter.Web\obj\Debug\BikeRouter.Web2.dll
+E:\projects\BikeInCity\branches\version3\Project\BikeRouter.Web\obj\Debug\BikeRouter.Web2.pdb

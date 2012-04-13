@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tkhs.kite.cz/ExternalServices_1_2_2" elementFormDefault="qualified" targetNamespace="http://tkhs.kite.cz/ExternalServices_1_2_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd2" namespace="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" />
+  <xs:element name="GetLanguages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetLanguagesResult" nillable="true" type="q1:ArrayOfTKLanguage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetBusinessRulesResult" nillable="true" type="q2:ArrayOfTKBusinessRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetMapDataResult" nillable="true" type="q3:TKMapData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNews">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetNewsResult" nillable="true" type="q4:TKNews" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardPrintedNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardRfId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="AuthenticateUserResult" nillable="true" type="q5:TKAuthenticationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="includeAddresses" type="xs:boolean" />
+        <xs:element minOccurs="0" name="includeContacts" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerResult" nillable="true" type="q6:TKCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerAddressesResult" nillable="true" type="q7:ArrayOfTKAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerContacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerContactsResult" nillable="true" type="q8:ArrayOfTKContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerCardsResult" nillable="true" type="q9:ArrayOfTKCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardPrintedNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardRfId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnassignCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardPrintedNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardRfId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnassignCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="customer" nillable="true" type="q10:TKCustomer" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="CreateCustomerResult" nillable="true" type="q11:TKCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="customer" nillable="true" type="q12:TKCustomer" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="AddCustomerResult" nillable="true" type="q13:TKCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="customer" nillable="true" type="q14:TKCustomer" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="UpdateCustomerResult" nillable="true" type="q15:TKCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q16="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="contract" nillable="true" type="q16:TKContract" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="AddContractResult" nillable="true" type="q17:TKContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q18="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="address" nillable="true" type="q18:TKAddress" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="AddAddressResult" nillable="true" type="q19:TKAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="address" nillable="true" type="q20:TKAddress" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="UpdateAddressResult" nillable="true" type="q21:TKAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addressId" type="xs:int" />
+        <xs:element minOccurs="0" name="timestamp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAddressResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q22="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="contact" nillable="true" type="q22:TKContact" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="AddContactResult" nillable="true" type="q23:TKContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="contact" nillable="true" type="q24:TKContact" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="UpdateContactResult" nillable="true" type="q25:TKContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contactId" type="xs:int" />
+        <xs:element minOccurs="0" name="timestamp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="activityType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="externalId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCreditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardPrintedNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardFrId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pinLength" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="validFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="validUntil" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cardType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardState" type="xs:int" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GenerateCardResult" nillable="true" type="q26:TKCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="searchParams" nillable="true" type="q27:TKSearchParams" />
+        <xs:element minOccurs="0" name="includeAddresses" type="xs:boolean" />
+        <xs:element minOccurs="0" name="includeContacts" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomersResult" nillable="true" type="q28:TKCustomers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerRentals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q29="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="searchParams" nillable="true" type="q29:TKSearchParams" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerRentalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerRentalsResult" nillable="true" type="q30:TKRentals" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAccountActivities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q31="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="searchParams" nillable="true" type="q31:TKSearchParams" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAccountActivitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerAccountActivitiesResult" nillable="true" type="q32:TKAccountActivities" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerContracts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q33="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="searchParams" nillable="true" type="q33:TKSearchParams" />
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerContractsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCustomerContractsResult" nillable="true" type="q34:TKContracts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" minOccurs="0" name="GetCountriesResult" nillable="true" type="q35:ArrayOfTKCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

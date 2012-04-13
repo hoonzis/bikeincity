@@ -1,0 +1,13 @@
+#map_canvas {
+  position:absolute;
+  height:  95%;
+  top: 52px;
+  left: 0px;
+  width:  100%;
+}
+
+div.station_infobox {
+  color: white;
+  background-color: #808080;
+  width:200px;
+}

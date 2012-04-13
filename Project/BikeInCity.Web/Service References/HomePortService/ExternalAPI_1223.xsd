@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" elementFormDefault="qualified" targetNamespace="http://tkhs.kite.cz/ExternalServices_1_2_2/DataHolders" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://tkhsdemo02.kite.cz/Services/ExternalService/ExternalAPI_122.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfTKLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKLanguage" nillable="true" type="tns:TKLanguage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKLanguage" nillable="true" type="tns:ArrayOfTKLanguage" />
+  <xs:complexType name="TKLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBackendSupported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKLanguage" nillable="true" type="tns:TKLanguage" />
+  <xs:complexType name="ArrayOfTKBusinessRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKBusinessRule" nillable="true" type="tns:TKBusinessRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKBusinessRule" nillable="true" type="tns:ArrayOfTKBusinessRule" />
+  <xs:complexType name="TKBusinessRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element name="ExternalID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="UsageTerms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidUntil" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKBusinessRule" nillable="true" type="tns:TKBusinessRule" />
+  <xs:complexType name="TKDayTicketBusinessRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TKBusinessRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowExtension" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExtensionRates" nillable="true" type="tns:ArrayOfTKPriceInterval" />
+          <xs:element minOccurs="0" name="MaxSimRentals" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrepaidDuration" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrepaidPrice" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TKDayTicketBusinessRule" nillable="true" type="tns:TKDayTicketBusinessRule" />
+  <xs:complexType name="ArrayOfTKPriceInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKPriceInterval" nillable="true" type="tns:TKPriceInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKPriceInterval" nillable="true" type="tns:ArrayOfTKPriceInterval" />
+  <xs:complexType name="TKPriceInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+      <xs:element name="Price" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKPriceInterval" nillable="true" type="tns:TKPriceInterval" />
+  <xs:complexType name="TKFullMemberBusinessRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TKBusinessRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bonus" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxSimRentals" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MinCredit" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PeriodFee" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PeriodLength" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="PeriodType" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PriceIntervals" nillable="true" type="tns:ArrayOfTKPriceInterval" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TKFullMemberBusinessRule" nillable="true" type="tns:TKFullMemberBusinessRule" />
+  <xs:complexType name="TKMapData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultLatitude" type="xs:double" />
+      <xs:element minOccurs="0" name="DefaultLongitude" type="xs:double" />
+      <xs:element minOccurs="0" name="DefaultZoomLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfTKLocationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKMapData" nillable="true" type="tns:TKMapData" />
+  <xs:complexType name="ArrayOfTKLocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKLocationInfo" nillable="true" type="tns:TKLocationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKLocationInfo" nillable="true" type="tns:ArrayOfTKLocationInfo" />
+  <xs:complexType name="TKLocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvailableBikes" nillable="true" type="tns:ArrayOfTKLocationBikeInfo" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalLocks" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKLocationInfo" nillable="true" type="tns:TKLocationInfo" />
+  <xs:complexType name="ArrayOfTKLocationBikeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKLocationBikeInfo" nillable="true" type="tns:TKLocationBikeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKLocationBikeInfo" nillable="true" type="tns:ArrayOfTKLocationBikeInfo" />
+  <xs:complexType name="TKLocationBikeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:short" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKLocationBikeInfo" nillable="true" type="tns:TKLocationBikeInfo" />
+  <xs:complexType name="TKNews">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="News" nillable="true" type="tns:ArrayOfTKNewsItem" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageTotal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKNews" nillable="true" type="tns:TKNews" />
+  <xs:complexType name="ArrayOfTKNewsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKNewsItem" nillable="true" type="tns:TKNewsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKNewsItem" nillable="true" type="tns:ArrayOfTKNewsItem" />
+  <xs:complexType name="TKNewsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Published" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKNewsItem" nillable="true" type="tns:TKNewsItem" />
+  <xs:complexType name="TKAuthenticationResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Roles" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKAuthenticationResult" nillable="true" type="tns:TKAuthenticationResult" />
+  <xs:complexType name="TKCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfTKAddress" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfTKContact" />
+      <xs:element minOccurs="0" name="Contract" nillable="true" type="tns:TKContract" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="TitleAfter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitleBefore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKCustomer" nillable="true" type="tns:TKCustomer" />
+  <xs:complexType name="ArrayOfTKAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKAddress" nillable="true" type="tns:TKAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKAddress" nillable="true" type="tns:ArrayOfTKAddress" />
+  <xs:complexType name="TKAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressID" type="xs:int" />
+      <xs:element minOccurs="0" name="AddressType" type="xs:int" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKAddress" nillable="true" type="tns:TKAddress" />
+  <xs:complexType name="ArrayOfTKContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKContact" nillable="true" type="tns:TKContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKContact" nillable="true" type="tns:ArrayOfTKContact" />
+  <xs:complexType name="TKContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactType" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKContact" nillable="true" type="tns:TKContact" />
+  <xs:complexType name="TKContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutoRenew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BusinessRuleExtID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidUntil" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKContract" nillable="true" type="tns:TKContract" />
+  <xs:complexType name="ArrayOfTKCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKCard" nillable="true" type="tns:TKCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKCard" nillable="true" type="tns:ArrayOfTKCard" />
+  <xs:complexType name="TKCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardNumberPrinted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKCard" nillable="true" type="tns:TKCard" />
+  <xs:complexType name="TKSearchParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilterDescriptors" nillable="true" type="tns:ArrayOfTKFilterDescriptor" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SortDescriptors" nillable="true" type="tns:ArrayOfTKSortDescriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKSearchParams" nillable="true" type="tns:TKSearchParams" />
+  <xs:complexType name="ArrayOfTKFilterDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKFilterDescriptor" nillable="true" type="tns:TKFilterDescriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKFilterDescriptor" nillable="true" type="tns:ArrayOfTKFilterDescriptor" />
+  <xs:complexType name="TKFilterDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilterType" type="xs:int" />
+      <xs:element minOccurs="0" name="FilterValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKFilterDescriptor" nillable="true" type="tns:TKFilterDescriptor" />
+  <xs:complexType name="ArrayOfTKSortDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKSortDescriptor" nillable="true" type="tns:TKSortDescriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKSortDescriptor" nillable="true" type="tns:ArrayOfTKSortDescriptor" />
+  <xs:complexType name="TKSortDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortDirection" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKSortDescriptor" nillable="true" type="tns:TKSortDescriptor" />
+  <xs:complexType name="TKCustomers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:ArrayOfTKCustomer" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageTotal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKCustomers" nillable="true" type="tns:TKCustomers" />
+  <xs:complexType name="ArrayOfTKCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKCustomer" nillable="true" type="tns:TKCustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKCustomer" nillable="true" type="tns:ArrayOfTKCustomer" />
+  <xs:complexType name="TKRentals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="Rentals" nillable="true" type="tns:ArrayOfTKRental" />
+      <xs:element minOccurs="0" name="TotalDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKRentals" nillable="true" type="tns:TKRentals" />
+  <xs:complexType name="ArrayOfTKRental">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKRental" nillable="true" type="tns:TKRental" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKRental" nillable="true" type="tns:ArrayOfTKRental" />
+  <xs:complexType name="TKRental">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RentalID" type="xs:int" />
+      <xs:element minOccurs="0" name="StartLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKRental" nillable="true" type="tns:TKRental" />
+  <xs:complexType name="TKAccountActivities">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfTKAccountActivity" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCredit" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKAccountActivities" nillable="true" type="tns:TKAccountActivities" />
+  <xs:complexType name="ArrayOfTKAccountActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKAccountActivity" nillable="true" type="tns:TKAccountActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKAccountActivity" nillable="true" type="tns:ArrayOfTKAccountActivity" />
+  <xs:complexType name="TKAccountActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountActivityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExternalID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKAccountActivity" nillable="true" type="tns:TKAccountActivity" />
+  <xs:complexType name="TKContracts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contracts" nillable="true" type="tns:ArrayOfTKContract" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageTotal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKContracts" nillable="true" type="tns:TKContracts" />
+  <xs:complexType name="ArrayOfTKContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKContract" nillable="true" type="tns:TKContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKContract" nillable="true" type="tns:ArrayOfTKContract" />
+  <xs:complexType name="ArrayOfTKCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKCountry" nillable="true" type="tns:TKCountry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKCountry" nillable="true" type="tns:ArrayOfTKCountry" />
+  <xs:complexType name="TKCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKCountry" nillable="true" type="tns:TKCountry" />
+</xs:schema>

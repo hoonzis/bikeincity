@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\test\output\" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="FileSystem - output folder" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="False">
+    <file relUrl="Web.config" publishTime="09/29/2011 11:14:02" />
+    <file relUrl="Images/logo_bikeincity.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="bin/BikeRouter.Web2.pdb" publishTime="09/29/2011 11:13:14" />
+    <file relUrl="App_GlobalResources/LocalizedText.resx" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="BikeMaster.Master" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Blog.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_GlobalResources/LocalizedText.fr-FR.resx" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="Contact.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="bin/BikeRouter.Web2.dll" publishTime="09/29/2011 11:13:14" />
+    <file relUrl="ServiceReferences.ClientConfig" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Phone.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Images/right_corner.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="clientaccesspolicy.xml" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_Data/homeport_prague.xml" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="Services/BikeService.svc" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="About.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Images/left_corner.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Global.asax" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="style.css" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="ClientBin/BikeRouter.xap" publishTime="09/29/2011 11:13:16" />
+    <file relUrl="Silverlight.js" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Default.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_Data/cityList.xml" publishTime="09/22/2011 21:33:40" />
+  </publishProfile>
+  <publishProfile publishUrl="localhost" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/BikeInCity" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="LocalIIS" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="False" />
+  <publishProfile publishUrl="ftp://hx.clevernet.cz/bikeincity.com/www" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BikeInCityFTP" publishMethod="FTP" replaceMatchingFiles="True" userName="ds3862yik" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC/hJ4BwsrEC56b2jvhgkVgAAAAACAAAAAAAQZgAAAAEAACAAAABkJtinh4933jOBuJFMIfJO9r3BxWkce37jJ0Q2eOxHDgAAAAAOgAAAAAIAACAAAABuPlJv+AYYoxudIvR89CFsNyJLlLR981lgbfL2dGVo1yAAAAB/fzVH0r50SvbVpPqeEJGwg5Mh8RmHbi0nDxsyWrtli0AAAAA1c2WtBf5eKxNkbkNENuEpQIMh0y8wvQofIdlhPqWGYKLbwO9Pe3q4qj7Ze11fxJY17zfcvjy+6GxO3Hc2OgFB" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="10/02/2011 17:53:04" />
+    <file relUrl="Images/logo_bikeincity.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="bin/BikeRouter.Web2.pdb" publishTime="10/02/2011 18:07:45" />
+    <file relUrl="Images/left_corner.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_Data/homeport_prague.xml" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="BikeMaster.Master" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Blog.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_GlobalResources/LocalizedText.fr-FR.resx" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="Contact.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="bin/BikeRouter.Web2.dll" publishTime="10/02/2011 18:07:45" />
+    <file relUrl="ServiceReferences.ClientConfig" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Phone.aspx" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_Data/cityList.xml" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="clientaccesspolicy.xml" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="App_GlobalResources/LocalizedText.resx" publishTime="09/22/2011 21:33:40" />
+    <file relUrl="Services/BikeService.svc" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Clear.aspx" publishTime="10/02/2011 17:51:04" />
+    <file relUrl="Global.asax" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Images/right_corner.gif" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="ClientBin/BikeRouter.xap" publishTime="10/02/2011 17:51:33" />
+    <file relUrl="style.css" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="About.aspx" publishTime="10/01/2011 00:43:52" />
+    <file relUrl="Silverlight.js" publishTime="09/22/2011 21:33:43" />
+    <file relUrl="Default.aspx" publishTime="09/22/2011 21:33:43" />
+  </publishProfile>
+</publishData>

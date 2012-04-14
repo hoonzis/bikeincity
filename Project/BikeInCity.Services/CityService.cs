@@ -9,6 +9,7 @@ using BikeInCity.Core.DataAccess;
 using System.Xml.Linq;
 using System.Globalization;
 using System.Net;
+using BikeInCity.DataAccess.Repositories;
 
 namespace BikeInCity.Services
 {
@@ -27,7 +28,7 @@ namespace BikeInCity.Services
             _repository.Save<City>(city);
         }
 
-
+        
 
         public void UpdateCityStations(City city)
         {
@@ -42,7 +43,15 @@ namespace BikeInCity.Services
                 cityInDB = _repository.Find<City>(x => x.Name == city.Name).FirstOrDefault();
             }
 
-            _repository.ExecuteUpdateQuery("delete from Station where CityId = " + cityInDB.Id);
+            if (cityInDB == null)
+            {
+                Logger.WriteMessage("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
+                return;
+            }
+            
+            var result = _repository.ExecuteUpdateQuery("delete Station where CityId = " + cityInDB.Id);
+            Console.Write(result);
+
             _repository.Flush();
 
             _repository.Refresh<City>(cityInDB);

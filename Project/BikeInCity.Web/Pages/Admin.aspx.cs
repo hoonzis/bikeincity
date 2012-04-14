@@ -32,7 +32,12 @@ namespace BikeInCity.Web.Pages
 
         void Admin_LoadComplete(object sender, EventArgs e)
         {
+            var stationCount = Repository.GetAll<Station>().Count();
+            var citiesCount = Repository.GetAll<City>().Count();
+
+            lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount;
             lblSchedulerState.Text = Global.Scheduler.IsStarted ? "Started" : "Stopped";
+            
             StringBuilder builder = new StringBuilder();
             foreach (var cityStatus in Global.CityStatuses)
             {
@@ -80,7 +85,7 @@ namespace BikeInCity.Web.Pages
 
         public void SchedulerStop_Click(object sender, EventArgs e)
         {
-            Global.Scheduler.Shutdown();
+            Global.Scheduler.Standby();
         }
 
         public void BackupToJson_Click(object sender, EventArgs e)
@@ -91,6 +96,11 @@ namespace BikeInCity.Web.Pages
             var stream = File.Create(fileName);
             serializer.WriteObject(stream, tips);
             lblOutput.Text = "Backup OK";
+        }
+
+        public void RemoveAllStations_Click(object sender, EventArgs e)
+        {
+            Repository.ExecuteUpdateQuery("delete Station s");
         }
     }
 }

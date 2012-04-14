@@ -19,6 +19,9 @@
             </td>
         </tr>
         <tr>
+            <td><asp:Button OnClick="RemoveAllStations_Click" Text="Remove All Stations" runat="server" /></td>
+        </tr>
+        <tr>
             <td>
                 <asp:Button ID="Button3" OnClick="DownloadAllCities_Click" Text="Download All cities"
                     runat="server" />

@@ -9,6 +9,7 @@ using NHibernate;
 using NHibernate.Linq;
 using Ninject;
 using BikeInCity.Model;
+using BikeInCity.Core.Services;
 
 
 namespace BikeInCity.Web.Tasks
@@ -29,6 +30,8 @@ namespace BikeInCity.Web.Tasks
         }
 
 
+        private ICityService cityService;
+
 
         public void Execute(JobExecutionContext context)
         {
@@ -45,24 +48,17 @@ namespace BikeInCity.Web.Tasks
                 var session = SessionFactory.OpenSession();
                 //use one session per the list of cities
 
-            
+
                 IBikeCity bikeCity = Global.GetBikeCity(instName);
                 List<City> cities = bikeCity.ProcessCity();
 
+
                 foreach (var city in cities)
                 {
-                    var cityInDB = session.Query<City>().Where(x => x.Name == city.Name).FirstOrDefault();
-                    foreach (var station in city.Stations)
-                    {
-                        station.City = cityInDB;
-                        session.Save(station);
-                    }
-                    cityInDB.Stations = city.Stations;
-                    session.Update(cityInDB);
+                    UpdateCityStations(city, session);
+                    session.Close();
                 }
-                session.Flush();
-                session.Close();
-                
+
                 Global.CityStatuses[instName] = "OK";
 
             }
@@ -71,6 +67,43 @@ namespace BikeInCity.Web.Tasks
                 Logger.WriteMessage(ex.ToString());
                 Global.CityStatuses[instName] = ex.ToString();
             }
+            
+        }
+
+        private void UpdateCityStations(City city, ISession session)
+        {
+
+            City cityInDB;
+            if (city.Id != 0)
+            {
+                cityInDB = session.Load<City>(city.Id);
+            }
+            else
+            {
+                cityInDB = session.Query<City>().Where(x => x.Name == city.Name).FirstOrDefault();
+            }
+
+            if (cityInDB == null)
+            {
+                Logger.WriteMessage("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
+                return;
+            }
+
+            var query = session.CreateQuery("delete Station where CityId = " + cityInDB.Id);
+            var result = query.ExecuteUpdate();
+            Console.Write(result);
+
+            session.Refresh(cityInDB);
+            
+            foreach (var station in city.Stations)
+            {
+                station.City = cityInDB;
+                session.Save(station);
+            }
+
+            cityInDB.Stations = city.Stations;
+            session.Update(cityInDB);
+            session.Flush();
         }
     }
 }

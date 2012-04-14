@@ -260,6 +260,7 @@
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Services\Bike.svc" />
     <Content Include="Services\BikeService.svc" />
     <Content Include="Services\Info.svc" />

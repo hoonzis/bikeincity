@@ -4,10 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
     <link rel="Stylesheet" href="css/default.css" type="text/css" />
     <!-- JS import start -->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
-    <script src="Scripts/jquery-1.7.1.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui-1.8.17.js" type="text/javascript"></script>
-    <script src="Scripts/modernizr-2.0.6.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfMlZQ_3qNhg2Sr8eWgRhtuK7nRKKnGzY&sensor=true"></script>
+    <script src="Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.8.17.min.js" type="text/javascript"></script>
+    <script src="Scripts/modernizr.custom.js" type="text/javascript"></script>
     <script src="Scripts/biking.js" type="text/javascript"></script>
     <script src="Scripts/infobox.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -150,10 +150,13 @@
             //just wait to be sure that we have all the cities
             while (cities == null) { }
 
-            currentCity = nearestCity(latitude, longitude, cities);
-
-            //ok found the city - now get stations
-            getStations(currentCity.Id);
+            if(cities.length>0){
+                currentCity = nearestCity(latitude, longitude, cities);
+                //ok found the city - now get stations
+                getStations(currentCity.Id);
+            }else{
+                //TODO: Show error  - no cities loaded
+            }
         } else {
             findAndShowNearest(currentPosition);
         }
@@ -212,6 +215,7 @@
     function createStationMarker(stationData) {
         var latlng = new google.maps.LatLng(stationData.Lat, stationData.Lng);
         var image;
+        
         if (stationData.Free > 2) {
             image = 'Img/station_green.png';
         }
@@ -228,11 +232,14 @@
             icon: image
         });
 
-        var frPlaces = 'Not determined';
+        var freeplaces;
         if (stationData.Total != -1) {
-            var freeplaces = stationData.Total - stationData.Free;
+            freeplaces = stationData.Total - stationData.Free;
+        }else{
+            freeplaces = 'not determined'
         }
 
+        
         var boxText = "<div><div style='margin:3px'>" + stationData.Address + '<br/>bikes:' + stationData.Free + '<br/>places:' + freeplaces + "</div></div>";
 
         var myOptions = {
@@ -251,11 +258,6 @@
         var infowindow = new InfoBox(myOptions)
         stationData.info = infowindow;
         stationData.marker = marker;
-
-        
-        stationsArray.push(marker);
-        marker.setMap(map);
-
         google.maps.event.addListener(marker, "click", function () {
 
             if (currentStation != null) {
@@ -266,6 +268,9 @@
             currentStation.info = infowindow;
             currentStation.info.open(map, currentStation.marker);
         });
+        
+        
+        stationsArray.push(marker);
     }
 
     function placeMarker(location) {

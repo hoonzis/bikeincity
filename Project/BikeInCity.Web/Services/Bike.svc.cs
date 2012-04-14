@@ -38,7 +38,8 @@ namespace BikeInCity.Web.Services
         [WebGet(UriTemplate = "cities", ResponseFormat = WebMessageFormat.Json)]
         public List<CityDto>  GetAllCities()
         {
-            return _repository.GetAll<City>().Select(x=>Mapper.Map(x)).ToList();
+            var cities = _repository.GetAll<City>().Select(x => Mapper.Map(x)).ToList();
+            return cities;
         }
 
         [OperationContract]
@@ -73,8 +74,8 @@ namespace BikeInCity.Web.Services
         {
             int id = Int32.Parse(cityID);
             var stations = _repository.Find<Station>(x => x.City.Id == id);
-            var cleared = stations.Select(x => Mapper.Map(x));
-            return cleared.ToList();
+            var dtos = stations.Select(x => Mapper.Map(x)).ToList();
+            return dtos;
         }
     }
 }

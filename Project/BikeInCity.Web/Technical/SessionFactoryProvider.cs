@@ -24,6 +24,8 @@ namespace BikeInCity.Web.Technical
                 .Mappings(ConfigureMapping)
                 .ExposeConfiguration(NHibernateStuff)
                 .BuildSessionFactory();
+
+            _rebuildSchema = true;
             
         }
 

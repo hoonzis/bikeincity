@@ -61,7 +61,8 @@ namespace BikeInCity.Web.Biking
                     }
                     catch (Exception ex)
                     {
-                        Console.Write("Error Lyon");
+                        Console.Write("Error Lyon: " +ex.Message);
+                        Logger.WriteMessage("Error Lyon: " + ex.Message);
                     }
                 }
             }

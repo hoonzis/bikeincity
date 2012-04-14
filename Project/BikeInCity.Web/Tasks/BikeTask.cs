@@ -29,10 +29,6 @@ namespace BikeInCity.Web.Tasks
             set { _sessionFactory = value; }
         }
 
-
-        private ICityService cityService;
-
-
         public void Execute(JobExecutionContext context)
         {
             

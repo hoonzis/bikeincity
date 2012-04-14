@@ -14,6 +14,7 @@ using BikeInCity.Model;
 using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
+using System.Data.SqlClient;
 
 namespace BikeInCity.Web.Pages
 {
@@ -32,18 +33,25 @@ namespace BikeInCity.Web.Pages
 
         void Admin_LoadComplete(object sender, EventArgs e)
         {
-            var stationCount = Repository.GetAll<Station>().Count();
-            var citiesCount = Repository.GetAll<City>().Count();
-
-            lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount;
-            lblSchedulerState.Text = Global.Scheduler.IsStarted ? "Started" : "Stopped";
-            
-            StringBuilder builder = new StringBuilder();
-            foreach (var cityStatus in Global.CityStatuses)
+            try
             {
-                builder.Append(cityStatus.Key + " - " + ((cityStatus.Value.Length > 30) ? cityStatus.Value.Substring(0, 30) : cityStatus.Value + Environment.NewLine));
+                var stationCount = Repository.GetAll<Station>().Count();
+                var citiesCount = Repository.GetAll<City>().Count();
+
+                lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount;
+                lblSchedulerState.Text = Global.Scheduler.IsStarted ? "Started" : "Stopped";
+
+                StringBuilder builder = new StringBuilder();
+                foreach (var cityStatus in Global.CityStatuses)
+                {
+                    builder.Append(cityStatus.Key + " - " + ((cityStatus.Value.Length > 30) ? cityStatus.Value.Substring(0, 30) : cityStatus.Value + Environment.NewLine));
+                }
+                lblCityStatuses.Text = builder.ToString();
             }
-            lblCityStatuses.Text = builder.ToString();
+            catch (SqlException ex)
+            {
+                lblOutput.Text = "The database was not yet configured! + \n" + ex.Message;
+            }
         }
 
         public void Reinsert_Click(object sender, EventArgs e)

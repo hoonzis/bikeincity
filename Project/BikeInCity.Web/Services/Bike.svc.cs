@@ -54,6 +54,7 @@ namespace BikeInCity.Web.Services
             }
             catch (FormatException ex)
             {
+                Logger.WriteMessage(ex.Message);
                 throw new WebFaultException(HttpStatusCode.BadRequest);
             }
         }

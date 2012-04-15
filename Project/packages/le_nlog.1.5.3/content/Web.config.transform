@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog"/>
+  </configSections>
+  <appSettings>
+    <add key="LOGENTRIES_ACCOUNT_KEY" value="" />
+    <add key="LOGENTRIES_LOCATION" value="" />
+  </appSettings>
+  <nlog>
+    <extensions>
+      <add assembly="le_nlog"/>
+    </extensions>
+    <targets>
+      <target name="logentries" type="Logentries" key="LOGENTRIES_ACCOUNT_KEY" location="LOGENTRIES_LOCATION"
+          debug="true" layout="${date:format=ddd MMM dd} ${time:format=HH:mm:ss} ${date:format=zzz yyyy} ${logger} : ${LEVEL}, ${message}, ${exception:format=tostring}"/>
+    </targets>
+    <rules>
+      <logger name="*" minLevel="Info" appendTo="logentries"/>
+    </rules>
+  </nlog>
+  <system.web>
+      <compilation debug="true" targetFramework="4.0" />
+  </system.web>
+</configuration>

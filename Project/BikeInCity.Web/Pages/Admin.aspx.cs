@@ -41,8 +41,8 @@ namespace BikeInCity.Web.Pages
                 var stationCount = Repository.GetAll<Station>().Count();
                 var citiesCount = Repository.GetAll<City>().Count();
 
-                lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount;
-                lblSchedulerState.Text = Global.Scheduler.IsStarted ? "Started" : "Stopped";
+                lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount + " Repeat interval: " + Global.RepeatInterval;
+                lblSchedulerState.Text = Global.Scheduler.IsStarted ? Global.Scheduler.InStandbyMode ? "StandBy" : "Started" : "Stopped";
 
                 StringBuilder builder = new StringBuilder();
                 foreach (var cityStatus in Global.CityStatuses)
@@ -95,11 +95,13 @@ namespace BikeInCity.Web.Pages
         public void SchedulerStart_Click(object sender, EventArgs e)
         {
             Global.Scheduler.Start();
+            _log.Info("Scheduler started");
         }
 
         public void SchedulerStop_Click(object sender, EventArgs e)
         {
             Global.Scheduler.Standby();
+            _log.Info("Scheduler on Standby");
         }
 
         public void BackupToJson_Click(object sender, EventArgs e)

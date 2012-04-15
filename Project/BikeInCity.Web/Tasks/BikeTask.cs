@@ -32,11 +32,13 @@ namespace BikeInCity.Web.Tasks
             set { _sessionFactory = value; }
         }
 
-        public void Execute(JobExecutionContext context)
+        
+        public void Execute(IJobExecutionContext context)
         {
             
-            string instName = context.JobDetail.Name;
-            string instGroup = context.JobDetail.Group;
+            string instName = context.JobDetail.Key.Name;
+            string instGroup = context.JobDetail.Key.Group;
+
             if (!Global.CityStatuses.ContainsKey(instName))
             {
                 Global.CityStatuses.Add(instName, "Not yet executed");

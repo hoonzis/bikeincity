@@ -28,6 +28,8 @@ namespace BikeInCity.Web
     {
         private static IKernel _kernel;
         private static IScheduler _scheduler;
+        public static int RepeatInterval { get; set; }
+
 
         public static IScheduler Scheduler
         {
@@ -74,7 +76,7 @@ namespace BikeInCity.Web
 
         private void AddCitiesToScheduler()
         {
-             var repeatInterval = Convert.ToInt32(ConfigurationManager.AppSettings["RepeatInterval"]);
+             RepeatInterval = Convert.ToInt32(ConfigurationManager.AppSettings["RepeatInterval"]);
             _cities.Add("Rennes",new Rennes());
             _cities.Add("Wien",new Wien());
             _cities.Add("London",new London());
@@ -144,11 +146,19 @@ namespace BikeInCity.Web
         private void AddTask(String cityName)
         {
             // construct job info
-            JobDetail jobDetail = new JobDetail(cityName, null, typeof(BikeTask));
-            // fire every hour
-            Trigger trigger = TriggerUtils.MakeSecondlyTrigger(60);
-            trigger.StartTimeUtc = DateTime.UtcNow.AddSeconds(1);
-            trigger.Name = cityName;
+            IJobDetail jobDetail = JobBuilder
+                .Create()
+                .OfType(typeof(BikeTask))
+                .WithIdentity(new JobKey(cityName,"citiesJobs"))
+                .Build();
+
+            ITrigger trigger = TriggerBuilder.Create()
+                .ForJob(jobDetail)
+                .WithIdentity(new TriggerKey(cityName, "citiesTrigger"))
+                .WithSchedule(SimpleScheduleBuilder.Create().WithIntervalInSeconds(60))
+                .StartAt(DateTime.UtcNow.AddSeconds(1))
+                .Build();
+
             _scheduler.ScheduleJob(jobDetail, trigger); 
         }       
     }

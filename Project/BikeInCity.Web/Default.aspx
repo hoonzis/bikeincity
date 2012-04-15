@@ -23,7 +23,6 @@
     var positionFound = false;
     var currentPosition;
     var latestCenter;
-    var baseService = 'http://localhost:1300/';
     var cityService = 'Services/Bike.svc/json/cities';
     var stationsService = 'Services/Bike.svc/json/city/';
     var countryService = 'Services/Bike.svc/json/countries';
@@ -172,7 +171,7 @@
     }
 
     function getStations(id) {
-        $.getJSON(baseService + stationsService + id + "/stations" + "?callback=?", sObtained);
+        $.getJSON(stationsService + id + "/stations" + "?callback=?", sObtained);
     }
 
     function sObtained(data) {
@@ -437,8 +436,8 @@
         createMap();
         addListeners();
         setClickCallbacks();
-        $.getJSON(baseService + countryService + "?callback=?", callbackCountry);
-        $.getJSON(baseService + cityService + "?callback=?", callbackCities);
+        $.getJSON(countryService + "?callback=?", callbackCountry);
+        $.getJSON(cityService + "?callback=?", callbackCities);
 
     });
     </script>

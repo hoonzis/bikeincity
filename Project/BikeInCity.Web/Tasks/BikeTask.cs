@@ -10,6 +10,7 @@ using NHibernate.Linq;
 using Ninject;
 using BikeInCity.Model;
 using BikeInCity.Core.Services;
+using log4net;
 
 
 namespace BikeInCity.Web.Tasks
@@ -17,6 +18,8 @@ namespace BikeInCity.Web.Tasks
     public class BikeTask : IJob
     {
         private ISessionFactory _sessionFactory;
+
+        private readonly ILog _log = LogManager.GetLogger(typeof(BikeTask));
 
         public ISessionFactory SessionFactory
         {
@@ -60,8 +63,8 @@ namespace BikeInCity.Web.Tasks
             }
             catch (Exception ex)
             {
-                Logger.WriteMessage(ex.ToString());
-                Global.CityStatuses[instName] = ex.ToString();
+                _log.Error("Error while downloading the cities in the task: " + instName,ex);
+                Global.CityStatuses[instName] = ex.Message;
             }
             
         }
@@ -81,7 +84,7 @@ namespace BikeInCity.Web.Tasks
 
             if (cityInDB == null)
             {
-                Logger.WriteMessage("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
+                _log.Error("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
                 return;
             }
 

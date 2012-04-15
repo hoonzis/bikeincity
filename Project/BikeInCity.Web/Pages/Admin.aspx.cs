@@ -15,11 +15,14 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
 using System.Data.SqlClient;
+using log4net;
 
 namespace BikeInCity.Web.Pages
 {
     public partial class Admin : PageBase
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(Admin));
+
         [Inject]
         public ICityService CityService { get; set; }
 
@@ -61,7 +64,6 @@ namespace BikeInCity.Web.Pages
         public void Reinsert_Click(object sender, EventArgs e)
         {
             var citiesXML = WebUtils.GetAppDataPath("cityList.xml");
-            Logger.WriteMessage(citiesXML);
             CityService.ReinsertCitiesToDB("http://nextbike.net/maps/nextbike-official.xml", citiesXML);
             lblOutput.Text = "Cities inserted";
         }

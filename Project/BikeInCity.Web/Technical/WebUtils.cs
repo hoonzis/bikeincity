@@ -36,10 +36,7 @@ namespace BikeInCity.Web.Technical
 
         public static String GetAppDataPath(String fileName)
         {
-            
             String basePath = AppDomain.CurrentDomain.BaseDirectory;
-            Logger.WriteMessage("Base path: " + basePath);
-
             return basePath + "App_Data\\" + fileName;
         }
     }

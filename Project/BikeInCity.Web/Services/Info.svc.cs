@@ -13,6 +13,8 @@ using System.ServiceModel.Activation;
 using System.Web;
 using System.Configuration;
 using BikeInCity.Core.DataAccess;
+using log4net;
+using System.Net;
 
 namespace BikeInCity.Web.Services
 {
@@ -20,6 +22,8 @@ namespace BikeInCity.Web.Services
     [ServiceContract]
     public class Info
     {
+        private readonly ILog _log = LogManager.GetLogger(typeof(Info));
+
         private IRepository _repository;
         private IInfoService _infoService;
         private IImageService _imageService;
@@ -52,9 +56,9 @@ namespace BikeInCity.Web.Services
             }
             catch (FormatException ex)
             {
-                Logger.WriteMessage(ex.Message);
+                _log.Info("WS exception", ex);
+                throw new WebFaultException(HttpStatusCode.BadRequest);
             }
-            return null;
         }
 
         [OperationContract]

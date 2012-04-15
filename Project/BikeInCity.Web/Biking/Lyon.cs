@@ -11,11 +11,13 @@ using System.Net;
 using System.Web.Script.Serialization;
 using System.Diagnostics;
 using System.Globalization;
+using log4net;
 
 namespace BikeInCity.Web.Biking
 {
     public class Lyon : IBikeCity
     {
+        private readonly ILog _log = LogManager.GetLogger(typeof(Lyon));
         public List<City> ProcessCity()
         {
             String[] cityParts = { "69381", "69382", "69383", "69384", "69385", "69386", "69387", "69388", "69389", "69266", "69034", "69256" };
@@ -61,8 +63,8 @@ namespace BikeInCity.Web.Biking
                     }
                     catch (Exception ex)
                     {
-                        Console.Write("Error Lyon: " +ex.Message);
-                        Logger.WriteMessage("Error Lyon: " + ex.Message);
+                        _log.Info("Error inside the Lyon handler, continouing the execution for the rest of the stations", ex);
+                        
                     }
                 }
             }

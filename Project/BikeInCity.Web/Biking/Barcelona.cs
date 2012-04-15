@@ -8,11 +8,14 @@ using System.Xml.Linq;
 using BikeInCity.Model;
 
 using System.Globalization;
+using log4net;
 
 namespace BikeInCity.Web.Biking
 {
     public class Barcelona : IBikeCity
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(Barcelona));
+
         public List<City> ProcessCity()
         {
             //iformatprovide for the convert method
@@ -88,7 +91,7 @@ namespace BikeInCity.Web.Biking
                 //here catch the possible errors of conversions
                 catch (Exception ex)
                 {
-                    Logger.WriteMessage("Error while converting Barcelona station.\n" + ex.Message);
+                    _log.Info("Error while converting Barcelona station",ex);
                 }
             }
 

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using BikeInCity.Model;
 using System.Xml.Linq;
+using log4net;
 
 namespace BikeInCity.Web.Biking
 {
     public static class Decaux
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(Decaux));
+
         /// <summary>
         /// Gets the data about Decaux working service. Some cities require postfixing the stationdetails url by the name of the city.
         /// .../stationdetails/valence/id
@@ -57,7 +60,7 @@ namespace BikeInCity.Web.Biking
             }
             catch (Exception ex)
             {
-                Logger.WriteMessage("Decaux: - Error while getting information about station: " + ex.Message);
+                _log.Info("Decaux: - Error while getting information about station: " + ex);
             }
             
             City city = new City

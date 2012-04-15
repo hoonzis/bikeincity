@@ -10,11 +10,13 @@ using System.Xml.Linq;
 using System.Globalization;
 using System.Net;
 using BikeInCity.DataAccess.Repositories;
+using log4net;
 
 namespace BikeInCity.Services
 {
     public class CityService : ICityService
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(CityService));
         public IRepository _repository;
 
         [Inject]
@@ -45,7 +47,7 @@ namespace BikeInCity.Services
 
             if (cityInDB == null)
             {
-                Logger.WriteMessage("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
+                _log.Error("City with ID: " + city.Id + " or name " + city.Name + " not found in DB");
                 return;
             }
             
@@ -69,21 +71,17 @@ namespace BikeInCity.Services
 
         public void ReinsertCitiesToDB(String nextBikeURL, String cityXMLFile)
         {
-
-            Logger.WriteMessage("NextBike: " + nextBikeURL);
-            Logger.WriteMessage("Other: " + cityXMLFile);
+            _log.Debug("NextBike: " + nextBikeURL);
+            _log.Debug("Other: " + cityXMLFile);
 
             WebClient client = new WebClient();
             var xml = client.DownloadString(nextBikeURL);
-
-
-            Logger.WriteMessage(xml);
 
             if (!String.IsNullOrEmpty(xml))
             {
                 //Cities from NextBike           
                 XDocument xDoc = XDocument.Parse(xml);
-                Logger.WriteMessage("nextBike Loaded!");
+                _log.Info("nextBike Loaded!");
                 foreach (var elem in xDoc.Descendants("city"))
                 {
                     var name = elem.Attribute("name").Value;
@@ -94,10 +92,14 @@ namespace BikeInCity.Services
                     CreateIfDoesNotExists(lat, lng, name, countryName);
                 }
             }
+            else
+            {
+                _log.Info("Empty XML downloaded from NextBike");
+            }
 
             //Cities from my defined list
             XDocument xMyCitiesDoc = XDocument.Load(cityXMLFile);
-            Logger.WriteMessage("CityFile Loaded");
+            _log.Info("CityFile Loaded");
             foreach (var elem in xMyCitiesDoc.Descendants("city"))
             {
                 var countryName = FilterCountry(elem.Attribute("country").Value);

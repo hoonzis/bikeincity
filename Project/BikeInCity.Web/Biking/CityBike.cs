@@ -7,11 +7,14 @@ using System.Net;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using log4net;
 
 namespace BikeInCity.Web.Biking
 {
     public static class CityBike
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(CityBike));
+
         public static City GetCity(String baseUrl)
         {
             //iformatprovide for the convert method
@@ -87,7 +90,7 @@ namespace BikeInCity.Web.Biking
                 //here catch the possible errors of conversions
                 catch (Exception ex)
                 {
-                    Logger.WriteMessage("Error while converting CityBike station.\n" + ex.Message);
+                    _log.Info("Error while converting CityBike station" + ex);
                 }
             }
 

@@ -20,6 +20,7 @@ using BikeInCity.Core.Services;
 using BikeInCity.Dto;
 using BikeInCity.Core.DataAccess;
 using System.Net;
+using log4net;
 
 namespace BikeInCity.Web.Services
 {
@@ -27,6 +28,7 @@ namespace BikeInCity.Web.Services
     [ServiceContract]
     public class Bike
     {
+        private readonly ILog _log = LogManager.GetLogger(typeof(Bike));
         private IRepository _repository;
 
         public Bike()
@@ -54,7 +56,7 @@ namespace BikeInCity.Web.Services
             }
             catch (FormatException ex)
             {
-                Logger.WriteMessage(ex.Message);
+                _log.Error(ex.Message,ex);
                 throw new WebFaultException(HttpStatusCode.BadRequest);
             }
         }

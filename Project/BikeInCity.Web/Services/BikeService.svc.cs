@@ -41,7 +41,6 @@ namespace BikeInCity.Web.Services
         [WebGet(UriTemplate = "cities", ResponseFormat = WebMessageFormat.Json)]
         public List<CityOldDto> GetCities()
         {
-            Logger.WriteMessage("City request recieved: ");
             return _repository.GetAll<City>().Select(x => Mapper.MapOldCity(x)).ToList();
         }
 

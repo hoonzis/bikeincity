@@ -52,6 +52,10 @@ namespace BikeInCity.Web.Pages
             {
                 lblOutput.Text = "The database was not yet configured! + \n" + ex.Message;
             }
+            catch (Exception ex)
+            {
+                lblOutput.Text = "Other unspecified execption! + \n" + ex.Message;
+            }
         }
 
         public void Reinsert_Click(object sender, EventArgs e)

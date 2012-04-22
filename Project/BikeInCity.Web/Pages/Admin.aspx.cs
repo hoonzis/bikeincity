@@ -16,6 +16,7 @@ using System.IO;
 using System.Text;
 using System.Data.SqlClient;
 using log4net;
+using BikeInCity.Dto;
 
 namespace BikeInCity.Web.Pages
 {
@@ -104,13 +105,38 @@ namespace BikeInCity.Web.Pages
             _log.Info("Scheduler on Standby");
         }
 
+        private void SerializeAll<T>(List<T> items)
+        {
+            var serializer = new DataContractJsonSerializer(typeof(List<T>));
+            var fileName = WebUtils.GetAppDataPath(typeof(T).Name + DateTime.Now.ToString("ddMMyyyy"));
+            using (var stream = File.Create(fileName)) {
+                serializer.WriteObject(stream, items);
+            }
+        }
+
         public void BackupToJson_Click(object sender, EventArgs e)
         {
-            var tips = Repository.GetAll<InformationTip>();
-            var serializer = new DataContractJsonSerializer(typeof(List<InformationTip>));
-            var fileName = WebUtils.GetAppDataPath("backup" + DateTime.Now.ToString("ddMMyyyy"));
-            var stream = File.Create(fileName);
-            serializer.WriteObject(stream, tips);
+            var tips = Repository.GetAll<InformationTip>().Select(x => Mapper.Map(x)).ToList();
+            SerializeAll<InformationTipDto>(tips);
+
+            var cities = Repository.GetAll<City>().Select(x => Mapper.Map(x)).ToList();
+            SerializeAll<CityDto>(cities);
+
+            var stations = Repository.GetAll<Station>().Select(x => Mapper.Map(x)).ToList();
+            SerializeAll<StationDto>(stations);
+
+            /*
+        var serializer = new DataContractJsonSerializer(typeof(List<InformationTipDto>));
+        var fileName = WebUtils.GetAppDataPath("tips" + DateTime.Now.ToString("ddMMyyyy"));
+        var stream = File.Create(fileName);
+        serializer.WriteObject(stream, tips);
+            
+                
+        var cities = Repository.GetAll<City>().Select(x => Mapper.Map(x));
+        fileName = WebUtils.GetAppDataPath("cities" + DateTime.Now.ToString("ddMMyyyy"));
+        stream = File.Create(fileName);
+        serializer = new DataContractJsonSerializer(typeof(List<CityDto>));
+        serializer.WriteObject(stream, cities);*/
             lblOutput.Text = "Backup OK";
         }
 

@@ -210,6 +210,7 @@
     <Content Include="Img\wp7\directions.PNG" />
     <Content Include="Img\wp7\find.PNG" />
     <Content Include="Img\wp7\settings.PNG" />
+    <Content Include="Mobile\index.html" />
     <Content Include="Scripts\biking.js" />
     <Content Include="Scripts\infobox.js" />
     <Content Include="Scripts\jquery.form.js" />

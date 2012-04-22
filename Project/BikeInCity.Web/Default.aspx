@@ -438,7 +438,6 @@
         setClickCallbacks();
         $.getJSON(countryService + "?callback=?", callbackCountry);
         $.getJSON(cityService + "?callback=?", callbackCities);
-
     });
     </script>
 </asp:Content>

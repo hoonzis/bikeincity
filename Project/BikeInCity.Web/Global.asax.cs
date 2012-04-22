@@ -21,6 +21,7 @@ using Quartz;
 using BikeInCity.Web.Tasks;
 using Quartz.Impl;
 using NHibernate.Linq;
+using Common.Logging;
 
 namespace BikeInCity.Web
 {
@@ -29,6 +30,7 @@ namespace BikeInCity.Web
         private static IKernel _kernel;
         private static IScheduler _scheduler;
         public static int RepeatInterval { get; set; }
+        private readonly ILog _log = LogManager.GetLogger(typeof(Global));
 
 
         public static IScheduler Scheduler
@@ -66,6 +68,7 @@ namespace BikeInCity.Web
         protected override void OnApplicationStarted()
         {
             base.OnApplicationStarted();
+            _log.Info("Application started! Cities will be added to the scheduler");
             AddCitiesToScheduler();
         }
 

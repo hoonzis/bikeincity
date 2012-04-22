@@ -36,6 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DesktopBuildPackageLocation>.\BikeInCity.Web.zip</DesktopBuildPackageLocation>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="C5">
@@ -307,7 +308,6 @@
     <None Include="Service References\HomePortService\ExternalAPI_1224.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Services\Upload.ashx" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -316,6 +316,7 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Services\Upload.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BikeMaster.Master.cs">
@@ -361,6 +362,9 @@
     <Compile Include="Services\BikeService.svc.cs">
       <DependentUpon>BikeService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\Upload.ashx.cs">
+      <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Technical\Mapper.cs" />
     <Compile Include="Pages\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
@@ -383,9 +387,6 @@
     </Compile>
     <Compile Include="Services\Info.svc.cs">
       <DependentUpon>Info.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\Upload.ashx.cs">
-      <DependentUpon>Upload.ashx</DependentUpon>
     </Compile>
     <Compile Include="Tasks\BikeTask.cs" />
     <Compile Include="Technical\BICWebModule.cs" />

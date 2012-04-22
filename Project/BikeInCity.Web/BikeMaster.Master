@@ -43,7 +43,7 @@
             js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
         }
-        //fbInit(document, 'script', 'facebook-jssdk');
+        fbInit(document, 'script', 'facebook-jssdk');
       </script>
     <div id="header" style="height: 7%">
         <div id="logo">

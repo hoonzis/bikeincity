@@ -309,7 +309,7 @@
                     <input type="radio" name="uploadVSURL" onchange="imageUrlUploadSwitch()" /><label>Image
                         from web</label>
                     <input data-bind="value: $data? newTip().imageUrl : ''" id="providedUrl" />
-                    <form id="uploadForm" action="Services/Upload.ashx" method="POST" enctype="multipart/form-data">
+                    <form id="uploadForm" action="http://www.bikeincity.com/Uploader/Upload.ashx" method="POST" enctype="multipart/form-data">
                     <table>
                         <tr>
                             <td><input type="file" name="file" /></td>

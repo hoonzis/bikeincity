@@ -60,8 +60,6 @@
                         $("#newTip").hide();
                     }
                 });
-
-                initAsynchronousUpload();
             });
         }
 
@@ -207,7 +205,7 @@
                     Title:
                 </td>
                 <td>
-                    <input data-bind="value: $data ? newTip().title : '' " >/
+                    <input data-bind="value: $data ? newTip().title : '' " >
                 </td>
             </tr>
             <tr>

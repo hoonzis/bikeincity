@@ -12,11 +12,7 @@ namespace UnitTests
     [TestClass]
     public class CitiesTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-
+        
         [TestMethod()]
         [Ignore]
         public void DenverProcessCityTest()

@@ -8,43 +8,50 @@
     <title>BikeInCity</title>
     <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
-    <!--
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-24176976-1']);
-        _gaq.push(['_setDomainName', '.bikeincity.com']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-    -->
+    
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta property="og:title" content="Bikeincity - creates smarter bike sharing in Your city!" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Bikeincity collects information from bike sharing system providers in order to save your time and make use of bikes in city more pleasant and comfortable. We help our users to find closest free bike or closest place to drop the bike, plan the best route for your ride in city and calculate how much time you need for your ride" />
     <meta property="og:keywords" content="bike, bicycle, bike in city, bicy, hire, sharing, London, Paris, Barcelona, Denver, Rennes, Germany, Austria, nextbike, Velib, Cycle Hire, Velo Start, Bicing, BCycle" />
-    <meta property="og:url" content="http://www.bikeincity.com" />
-    <meta property="og:image" content="http://www.bikeincity.com/Images/logo_bikeincity.gif" />
+    <meta property="og:url" content="http://bikeincity.apphb.com/" />
+    <meta property="og:image" content="http://bikeincity.apphb.com/Img/logo.gif" />
     <meta property="og:site_name" content="BikeInCity" />
-    <meta property="fb:admins" content="535677551" />
+     <script type="text/javascript">
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-31896309-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function () {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
 </head>
+
 <body>
-    <div id="fb-root"></div>
-    <script type="text/javascript">
-        function fbInit(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-        fbInit(document, 'script', 'facebook-jssdk');
-      </script>
+   <div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: 'bikeincity',
+            channelUrl: 'bikeincity.apphb.com',
+            status: true,
+            cookie: true,
+            xfbml: true
+        });
+    };
+
+    (function (d) {
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    } (document));
+</script>
+
     <div id="header" style="height: 7%">
         <div id="logo">
             <a href="Default.aspx">
@@ -52,7 +59,7 @@
         </div>
         
         <div id="socials">
-                <div class="fb-like" data-href="http://www.facebook.com/pages/Bikeincity/117864441628761" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" style="margin-left:5px;float:left;"></div>
+                <div class="fb-like" data-href="http://bikeincity.apphb.com" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" style="margin-left:5px;float:left;"></div>
                 <div style="margin-left:5px;float:left;"><a href="https://twitter.com/share" class="twitter-share-button" data-via="bikeincity" data-count="none">tweet</a></div>
                 <div style="margin-left:5px;float:left;"><g:plusone size="medium" annotation="none"></g:plusone></div>
         </div>
@@ -85,27 +92,6 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-    
-    <script type="text/javascript">
-        var _usrp = {
-            type: "button",
-            company: "bikeincity",
-            host: "bikeincity.userrules.com",
-            mode: "advanced",
-            sso: {},
-            getVisitorId: function () { return ""; },
-            getAdditionalParams: function () { return ""; },
-            placement: "bottom",
-            color: ["#0071bc", "#024c7a"]
-        };
-
-        (function (D) {
-            var _usr = D.createElement("script"), s = D.getElementsByTagName("script")[0];
-            _usr.type = "text/javascript"; _usr.async = true;
-            _usr.src = ("https:" == D.location.protocol ? "https" : "http") + "://dtkm4pd19nw6z.cloudfront.net/js/userrules/9a41a826e957127b4e5bfc7d140e45c4/feedback.canary.js";
-            s.parentNode.insertBefore(_usr, s);
-        })(document);
-    </script>
     <script type="text/javascript">
         (function () {
             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -116,6 +102,5 @@
     <script type="text/javascript">
         !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
     </script>
-    
 </body>
 </html>

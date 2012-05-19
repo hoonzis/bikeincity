@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfMlZQ_3qNhg2Sr8eWgRhtuK7nRKKnGzY&sensor=true"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
+    <script src="../Scripts/knockout-2.0.0.js" type="text/javascript"></script>
+    <script src="../ViewModels/CountryListViewModel.js" type="text/javascript"></script>
+    <script src="../ViewModels/CountryViewModel.js" type="text/javascript"></script>
+    <script src="../ViewModels/CityViewModel.js" type="text/javascript"></script>
+    <script src="../ViewModels/StationViewModel.js" type="text/javascript"></script>
+    <script src="../ViewModels/TipViewModel.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.map.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.map.extensions.js" type="text/javascript"></script>
+    <script src="../Scripts/modernizr.custom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var mobileDemo = { 'center': '57.7973333,12.0502107', 'zoom': 10 };
+        $('#gps_map').live('pageinit', function () {
+
+            $('#map_canvas_2').gmap({ 'center': mobileDemo.center, 'zoom': mobileDemo.zoom, 'disableDefaultUI': true, 'callback': function (map) {
+                var self = this;
+                self.watchPosition(function (position, status) {
+                    if (status === 'OK') {
+                        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        if (!self.get('markers').client) {
+                            self.addMarker({ 'id': 'client', 'position': latlng, 'bounds': true });
+                        } else {
+                            self.get('markers').client.setPosition(latlng);
+                            map.panTo(latlng);
+                        }
+                    }
+                });
+            }
+
+            }).load('gps_map');
+        });
+
+        $(document).ready(function () {
+            var countryList = new CountryListViewModel();
+            ko.applyBindings(countryList);
+        });
+    </script>
+</head>
+<body>
+    <div id="gps_map" data-role="page">
+            <div data-role="header">
+               <h1>BikeInCity</h1>
+               <a data-rel="back">back</a>
+               <a href="#cities" data-rel="button">Cities</a>
+            </div>
+        <div data-role="content">
+            
+            <div id="map_canvas_2" style="height: 400px">
+            </div>
+            <p></p>
+            
+                
+        </div>
+    </div>
+    <div data-role="page" id="cities">
+        <div data-role="header">
+            <h1>Cities</h1>
+           <a data-rel="back">back</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-bind="foreach: countries">
+                <li><span data-bind="text: name"></span>
+                    <ul data-bind="foreach: cities" data-role="listview">
+                        <li data-bind="click: $root.setSelected"><span data-bind="text:name"></span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

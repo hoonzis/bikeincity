@@ -1,0 +1,215 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  height: 100%;
+  overflow: auto;
+  font-family:Segoe UI;
+}
+
+a.nav:visited 
+{
+    text-decoration: none;
+    color:White;
+}
+a.nav:link
+{
+    text-decoration: none;
+    color:White;
+}
+
+#header {
+	height: 32px;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+#content {
+	height: auto;
+	margin-top: 35px;
+}
+
+#content_text {
+	width:auto;
+	margin-left:150px;
+	margin-right:225px;
+    border: 1px solid #b7b7b7;
+    border-radius:9px 9px 0px 0px;
+    background-image:-webkit-gradient(linear, 0% 0%, 0% 35%, from(#e7e7e7), to(#fffeff));
+	height: auto;
+    padding:5px;
+    color: #323232;
+    padding-left: 70px;
+    padding-bottom: 15px;
+}
+
+#content_text p {
+	margin-right:80px;
+    text-align: justify;
+    	
+}
+
+#logo {
+	height: 33px;
+	width: 150px;
+	float: left;
+}
+
+#logo img {
+	border-width: 0;
+}
+
+#left_corner {
+	height: 32px;
+	width: 3px;
+	float: left;
+}
+
+#flexible_div 
+{
+	background-color: #0071BC;
+	height: 24px;
+	text-align: right;
+	margin-left: 150px;
+	margin-right: 245px;
+	padding-top: 8px;
+	padding-right: 10px;
+	border-radius:9px;
+}
+
+#socials {
+	width: 245px;
+	float: right;
+	margin-top: 5px;
+}
+
+#social 
+{
+    margin-left:2px;
+    margin-right:2px;
+    float:left;
+    padding:0px;
+    border:solid 1px;
+}
+
+#facebookLike {
+	float: left;
+}
+
+#right_flexible {
+	float: right;
+	width: 380px;
+}
+
+div.header_text
+{
+	height: 24px;
+	color: #fffeff;
+	float: left;
+	margin-top: -8px;
+	padding-top: 8px;
+	width: 80px;
+	text-align: center;
+	border: 1px solid rgba(0,113,188,0);
+    border-top-width: 0;
+	border-bottom-width: 0;
+	vertical-align:middle;
+}
+
+div.header_text:hover
+{
+	background-color: #338DC9;
+	border: 1px solid #CCDDE8;
+    border-top-width: 0;
+	border-bottom-width: 0;
+}
+
+div.header_text a
+{
+	text-shadow: 1 2px 2px rgba(0,0,0,0.75);
+	color: #fffeff;
+	text-decoration: none;
+	font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.line
+{
+    height: 1px;
+    width: 90%;
+    background-color: #65676d;
+    margin-top: 15px;
+    margin-bottom:15px;
+    clear:left;
+}
+
+#menu {
+  position: absolute;
+  display: block;
+  width: 140px;
+  top: 100px;
+  left: 0px;
+  background-color: #0071BC;
+  border-radius:0px 8px 8px 0px;
+  font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  opacity: 0.9;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color:White;
+  cursor:pointer;
+}
+
+a.trigger {
+	display: block;
+	padding: 3px 3px 3px 20px;
+	text-decoration: none;
+	color: white;
+	margin: 0px;
+    white-space: nowrap;
+}
+
+a.trigger:visited {
+	text-decoration: none;
+    color:White;
+}
+
+
+nav ul {
+	padding: 0px;
+	margin: 0px;
+    position:relative;
+}
+
+nav ul li {
+	display: block;
+	padding: 2px;
+	margin: 0px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+ul.ul_city {
+	position: absolute;
+	margin-left: 120px;
+	display: block;
+	margin-top:-17px;
+	width:140px;
+	max-height:200px;
+	background-color: #808080;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+nav ul li:hover {
+	background-color: #66C547;
+}
+
+nav ul.nearestStations 
+{
+    background-color: #66C547;
+}
+
+
+
+
+
+

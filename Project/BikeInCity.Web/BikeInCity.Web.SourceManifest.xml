@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\projects\BIC\BikeInCity\Project\publish" managedRuntimeVersion="v4.0" />
+  <setAcl path="E:\projects\BIC\BikeInCity\Project\publish" setAclResourceType="Directory" />
+  <setAcl path="E:\projects\BIC\BikeInCity\Project\publish" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <setAcl path="E:\projects\BIC\BikeInCity\Project\publish\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
+</sitemanifest>

@@ -1,0 +1,27 @@
+﻿div.tips_column
+{
+	margin-top: 10px;
+	margin-right: 10px;
+	height:93%;
+	width:45%;
+	border: 1px solid #b7b7b7;
+	float:right;
+	position:relative;
+}
+
+div.tips_table 
+{
+	overflow: auto;
+	overflow-x: hidden;
+	height:93%;
+	width: 100%;
+}
+
+#map_canvas
+{
+    margin-left:10px;
+    margin-top:10px;
+	height: 95%;
+	width: 48%;
+	float: left;
+}

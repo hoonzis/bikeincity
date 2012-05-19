@@ -1,0 +1,108 @@
+﻿#mobile 
+{
+    margin-left:10%;
+    padding:0px;
+    margin-top:10px;
+    color: #a9a9a9;
+    font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    border: 3px;
+}
+
+#mobile tr
+{
+    height: 35px;
+    border: 1px solid #a9a9a9;
+}
+
+#mobile td
+{
+    width: 120px;
+    text-align: center;
+}
+
+#mobile th img
+{
+    border: 0px;
+    height: 110px;
+}
+
+#mobile a.active
+{
+    border-radius: 5px;
+	background-color:#66C547;
+    font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    color:white;
+    width: 100px;
+    text-decoration: none;
+    padding:6px;
+}
+
+#mobile a.active:hover
+{
+    background-color: #fb0;
+}
+
+#mobile a.not_active
+{
+    border-radius: 5px;
+    background-color:#a9a9a9;
+    font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    color:white;
+    width: 100px;
+    text-decoration: none;
+    padding:6px;
+}
+
+#showcase
+{
+    width:100%;
+    height:450px;
+    margin-top:20px;
+}
+
+div.logo
+{
+    float:left;
+}
+
+div.logo img
+{
+    height:90px;
+}
+
+#pic
+{
+    float:left;
+    margin-left:20px;
+    border:solid 1px;
+}
+
+#pic img
+{
+    width:220px;
+}
+
+div.functions
+{
+    float:left;
+    width:320px;
+    height:230px;
+    margin-left:10px;
+}
+
+div.functions a 
+{
+    color:Black;
+}
+
+div.functions a:visited 
+{
+    color:Black;
+}
+
+#description
+{
+    margin-top:15px;
+    text-align: justify;
+    font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}

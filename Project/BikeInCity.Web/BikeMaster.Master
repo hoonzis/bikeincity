@@ -35,11 +35,7 @@
 <script>
     window.fbAsyncInit = function () {
         FB.init({
-            appId: 'bikeincity',
-            channelUrl: 'bikeincity.apphb.com',
-            status: true,
-            cookie: true,
-            xfbml: true
+            channelUrl: 'http://bikeincity.apphb.com/channel.htm'
         });
     };
 

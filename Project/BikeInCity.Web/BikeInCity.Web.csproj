@@ -111,8 +111,8 @@
     <Content Include="App_Data\cityList.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\combres.xml" />
     <Content Include="App_Data\homeport_prague.xml" />
+    <Content Include="channel.htm" />
     <Content Include="clientaccesspolicy.xml">
       <SubType>Designer</SubType>
     </Content>

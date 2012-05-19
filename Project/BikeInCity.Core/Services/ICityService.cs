@@ -12,14 +12,7 @@ namespace BikeInCity.Core.Services
 
         void UpdateCityStations(City city);
 
-        /// <summary>
-        /// Reinserts in to the database the cities from different sources
-        /// </summary>
-        /// <param name="nextBikeURL">Url of the NextBike cities file</param>
-        /// <param name="xmlCities">Path to the file containg other cities</param>
         void ReinsertCitiesToDB(String nextBikeURL, String xmlCities);
-
-
 
     }
 }

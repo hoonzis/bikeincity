@@ -20,7 +20,7 @@ function toRad(value) {
 }
 
 function computeDistance(station, pos) {
-    var value = calculateDistance(station.Lat, pos.lat(), station.Lng, pos.lng());
+    var value = calculateDistance(station.lat(), pos.lat(), station.lng(), pos.lng());
     return value;
 }
 
@@ -32,7 +32,7 @@ function nearestStations(pos, count, predict, stationArray) {
         var station = stationArray[i];
         if (predict(station)) {
             var staDist = new Object();
-            staDist.dist = calculateDistance(station.Lat, pos.lat(), station.Lng, pos.lng());
+            staDist.dist = calculateDistance(station.lat(), pos.lat(), station.lng(), pos.lng());
             staDist.station = station;
             stationsCopy.push(staDist);
         }
@@ -51,7 +51,7 @@ function nearestCity(latitude,longitude, citiArray) {
     var minCity;
     for (var i = 0; i < citiArray.length; i++) {
         bcity = citiArray[i];
-        dist = calculateDistance(bcity.Lat, latitude, bcity.Lng, longitude);
+        dist = calculateDistance(bcity.lat, latitude, bcity.lng, longitude);
         if (dist < minDist) {
             minDist = dist;
             minCity = bcity;
@@ -97,7 +97,7 @@ function delta(a, b, threshold) {
 function nearestStationsVM(lat,lng, count, stationArray) {
     if (stationArray == null) { return []; }
 
-    var stationsCopy = [];
+    var stationsCopy = []; 
     for (var i = 0; i < stationArray.length; i++) {
         var station = stationArray[i];
         var staDist = new Object();
@@ -112,4 +112,15 @@ function nearestStationsVM(lat,lng, count, stationArray) {
         result.push(sorted[i]);
     }
     return result;
+}
+
+function addStationsToMap(stList, createMarkerFunction) {
+    for (var i = 0; i < stList.length; i++) {
+        var st = stList[i];
+        if (st.dist != null) {
+            createMarkerFunction(st.station);
+        } else {
+            createStationMarker(st);
+        }
+    }
 }

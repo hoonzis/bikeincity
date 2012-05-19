@@ -41,13 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CityDto.cs" />
-    <Compile Include="CityOldDto.cs" />
     <Compile Include="CountryDto.cs" />
     <Compile Include="ImageDto.cs" />
     <Compile Include="InformationTipDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StationDto.cs" />
-    <Compile Include="StationOldDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -32,16 +32,25 @@
     });
 
     self.getStations = function () {
-        $.getJSON("/Services/Bike.svc/json/city/" + this.id + "/stations", function (allData) {
-            var mappedStations = $.map(allData, function (item) {
-                var station = new StationViewModel(self.id, self);
-                station.address(item.Address);
-                station.lng(item.Lng);
-                station.lat(item.Lat);
-                return station;
-            });
-            self.stations(mappedStations);
+        $.ajax({
+            type: 'GET',
+            url: "http://" + location.host + "/Services/Bike.svc/json/city/" + this.id + "/stations",
+            dataType: 'json',
+            success: function (allData) {
+                var mappedStations = $.map(allData, function (item) {
+                    var station = new StationViewModel(self.id, self);
+                    station.address(item.Address);
+                    station.lng(item.Lng);
+                    station.lat(item.Lat);
+                    station.free(item.Free);
+                    station.total(item.Total);
+                    return station;
+                });
+                self.stations(mappedStations);
+            },
+            async: false
         });
+
     };
 
     // Operations

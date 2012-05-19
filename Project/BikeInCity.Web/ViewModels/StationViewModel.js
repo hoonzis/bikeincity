@@ -5,4 +5,6 @@
     self.address = ko.observable();
     self.lat = ko.observable();
     self.lng = ko.observable();
+    self.free = ko.observable();
+    self.total = ko.observable();
 }

@@ -22,6 +22,8 @@ using BikeInCity.Web.Tasks;
 using Quartz.Impl;
 using NHibernate.Linq;
 using Common.Logging;
+using AutoMapper;
+using BikeInCity.Dto;
 
 namespace BikeInCity.Web
 {
@@ -70,6 +72,10 @@ namespace BikeInCity.Web
             base.OnApplicationStarted();
             _log.Info("Application started! Cities will be added to the scheduler");
             AddCitiesToScheduler();
+            Mapper.CreateMap<City, CityDto>().ForMember(x => x.CountryId, opt => opt.MapFrom(src => src.Country.Id));
+            Mapper.CreateMap<Station, StationDto>();
+            Mapper.CreateMap<Country, CountryDto>();
+            Mapper.CreateMap<InformationTip, InformationTipDto>();
         }
 
         public static T GetObject<T>()

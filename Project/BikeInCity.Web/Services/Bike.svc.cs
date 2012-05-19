@@ -21,6 +21,7 @@ using BikeInCity.Dto;
 using BikeInCity.Core.DataAccess;
 using System.Net;
 using log4net;
+using AutoMapper;
 
 namespace BikeInCity.Web.Services
 {
@@ -40,7 +41,7 @@ namespace BikeInCity.Web.Services
         [WebGet(UriTemplate = "cities", ResponseFormat = WebMessageFormat.Json)]
         public List<CityDto>  GetAllCities()
         {
-            var cities = _repository.GetAll<City>().Select(x => Mapper.Map(x)).ToList();
+            var cities = Mapper.Map<List<CityDto>>(_repository.GetAll<City>());
             return cities;
         }
 
@@ -52,7 +53,7 @@ namespace BikeInCity.Web.Services
             {
                 int countryID = Convert.ToInt32(countryId);
                 var cities = _repository.Find<City>(x => x.Country.Id == countryID);
-                return cities.Select(x => Mapper.Map(x)).ToList();
+                return Mapper.Map<List<CityDto>>(cities);
             }
             catch (FormatException ex)
             {
@@ -77,7 +78,7 @@ namespace BikeInCity.Web.Services
         {
             int id = Int32.Parse(cityID);
             var stations = _repository.Find<Station>(x => x.City.Id == id);
-            var dtos = stations.Select(x => Mapper.Map(x)).ToList();
+            var dtos = Mapper.Map<List<StationDto>>(stations);
             return dtos;
         }
     }

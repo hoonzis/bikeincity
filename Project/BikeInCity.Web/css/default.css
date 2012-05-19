@@ -11,3 +11,42 @@ div.station_infobox {
   background-color: #808080;
   width:200px;
 }
+
+#boxText p {
+	margin: 0px;
+    white-space: nowrap;
+}
+
+#boxText p.address {
+	font-weight: bold;
+    margin-bottom: 5px;
+}
+#boxText p.free {
+	color: #00ff6e;
+    text-align: right;
+    padding-right:30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline;
+    margin-right: 5px;
+}
+
+#boxText p.notfree {
+	color: #ff1c2d;
+    text-align: right;
+    padding-right:22px;
+    display: inline;
+    height: 50px;
+}
+
+#boxText {
+	color:#fffeff; 
+	border: 0px; 
+	background: #5e5e5e; 
+	padding: 4px; 
+    padding-left: 8px;
+    padding-right: 8px;
+	border-radius: 4px 4px 4px 4px;
+    text-align: right;
+    min-width: 90px;
+}

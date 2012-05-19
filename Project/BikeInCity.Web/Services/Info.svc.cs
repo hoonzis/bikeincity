@@ -15,6 +15,7 @@ using System.Configuration;
 using BikeInCity.Core.DataAccess;
 using log4net;
 using System.Net;
+using AutoMapper;
 
 namespace BikeInCity.Web.Services
 {
@@ -26,13 +27,11 @@ namespace BikeInCity.Web.Services
 
         private IRepository _repository;
         private IInfoService _infoService;
-        private IImageService _imageService;
-
+        
         public Info()
         {
             _repository = Global.GetObject<IRepository>();
             _infoService = Global.GetObject<IInfoService>();
-            _imageService = Global.GetObject<IImageService>();
         }
 
         [OperationContract]
@@ -51,7 +50,7 @@ namespace BikeInCity.Web.Services
             try
             {
                 var id = Convert.ToInt32(cityId);
-                var list = _repository.Find<InformationTip>(x => x.City.Id == id).Select(x=>Mapper.Map(x)).ToList();
+                var list = Mapper.Map<List<InformationTipDto>>(_repository.Find<InformationTip>(x => x.City.Id == id));
                 return list;
             }
             catch (FormatException ex)
@@ -59,16 +58,6 @@ namespace BikeInCity.Web.Services
                 _log.Info("WS exception", ex);
                 throw new WebFaultException(HttpStatusCode.BadRequest);
             }
-        }
-
-        [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "images/add")]
-        public bool UploadImage(ImageDto image)
-        {
-            var filePath = HttpContext.Current.Server.MapPath(".") +
-                       ConfigurationManager.AppSettings["PictureUploadDirectory"];
-
-            return _imageService.UploadImage(image.Data, image.Title, filePath);
         }
     }
 }

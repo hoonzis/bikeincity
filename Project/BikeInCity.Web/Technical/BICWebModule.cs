@@ -19,12 +19,7 @@ namespace BikeInCity.Web.Technical
             Bind<ICityService>().To<CityService>();
             Bind<IRepository>().To<Repository>();
             Bind<ISessionFactory>().ToConstant(Global.SessionFactory);
-            Bind<IImageService>().To<ImageService>();
             Bind<IInfoService>().To<InfoService>();
-            //Bind<ISessionFactory>()
-            //.ToProvider<SessionFactoryProvider>()
-            //.InSingletonScope();
-
         }
     }
 }

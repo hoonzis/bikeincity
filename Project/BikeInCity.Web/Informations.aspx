@@ -9,72 +9,19 @@
     <script src="/Scripts/knockout.mapping-latest.debug.js" type="text/javascript"></script>
     <script src="/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
     <script src="/Scripts/jquery-ui-1.8.17.js" type="text/javascript"></script>
-    <script src="/Scripts/jquery.form.js" type="text/javascript"></script>
+    <script src="Scripts/biking.js" type="text/javascript"></script>
     <!-- ViewModels -->
     <script src="ViewModels/CityViewModel.js" type="text/javascript"></script>
     <script src="ViewModels/CountryViewModel.js" type="text/javascript"></script>
     <script src="ViewModels/TipViewModel.js" type="text/javascript"></script>
     <script src="ViewModels/StationViewModel.js" type="text/javascript"></script>
-    <script src="Scripts/biking.js" type="text/javascript"></script>
+    <script src="ViewModels/CountryListViewModel.js" type="text/javascript"></script>
     <script type="text/javascript">
         //globals
         var map;
         var stationMarkers = [];
         var countryList;
         var markers = [];
-
-        function CountryListViewModel() {
-            var self = this;
-            self.countries = ko.observableArray([]);
-
-            self.selectedCity = ko.observable();
-            self.oldCity = null;
-
-            self.setSelected = function (city) {
-                city.getStations();
-                self.oldCity = self.selectedCity();
-                self.selectedCity(city);
-            };
-
-            $.getJSON("Services/Bike.svc/json/countries", function (allData) {
-                var mappedCountries = $.map(allData, function (item) { return new CountryViewModel(item) });
-                self.countries(mappedCountries);
-            });
-
-            self.afterCountriesRendered = function (elements) {
-                $(elements[1]).mouseenter(function () {
-                    $(this).find("ul").slideToggle("fast");
-                });
-
-                $(elements[1]).mouseleave(function () {
-                    $(this).find("ul").hide();
-                });
-
-                $(elements[1]).find("city").hide();
-            };
-        }
-
-        function initAsynchronousUpload() {
-            //Initialization of the AjaxForm -->
-            $('#uploadForm').ajaxForm({
-                beforeSubmit: function (a, f, o) {
-                    o.dataType = 'html';
-                    $('#uploadOutput').html('Submitting...');
-                },
-                success: function (data) {
-                    var $out = $('#uploadOutput');
-                    $out.html('Form success handler received: <strong>' + typeof data + '</strong>');
-                    if (typeof data == 'object' && data.nodeType)
-                        data = elementToString(data.documentElement, true);
-                    else if (typeof data == 'object')
-                        data = objToString(data);
-                    $out.append('<div><pre>' + data + '</pre></div>');
-                    if (countryList.selectedCity() != null) {
-                        countryList.selectedCity().newTip().imageUrl(data);
-                    }
-                }
-            });
-        }
 
         function createMap() {
             var latlng = new google.maps.LatLng(0.0, 0.0);
@@ -149,7 +96,7 @@
 
                         var stations = viewModel.parent.stations();
                         var nearest = nearestStationsVM(viewModel.lat(), viewModel.lng(), 5, stations);
-                        addStationsToMap(nearest);
+                        addStationsToMap(nearest,createStationMarker);
                         
 
                     } else {
@@ -186,12 +133,9 @@
 
             createMap();
 
-            $('#newTip').hide();
-
-            //Hide (Collapse) the toggle containers on load
+           
             $(".menuToggle").hide();
 
-            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
             $("a.trigger").click(function () {
                 $(this).next("ul").toggle("fast").siblings(".menuToggle").hide("fast");
                 $(this).next("div.menuToggle").toggle("fast").siblings(".menuToggle").hide("fast");
@@ -199,31 +143,6 @@
 
             ko.applyBindings(countryList);
         });
-
-        function imageUrlUploadSwitch() {
-            var enableUpload = $("#enableUpload").attr("checked") == "checked";
-            $("#uploadForm").toggle(enableUpload);
-            $("#providedUrl").toggle(!enableUpload);
-
-            if (enableUpload) {
-                $("#uploadForm").attr("disabled", false);
-                $("#providedUrl").attr("disabled", true);
-            } else {
-                $("#uploadForm").attr("disabled", true);
-                $("#providedUrl").attr("disabled", false);
-            }
-        }
-
-        function addStationsToMap(stList) {
-            for (var i = 0; i < stList.length; i++) {
-                var st = stList[i];
-                if (st.dist != null) {
-                    createStationMarker(st.station);
-                } else {
-                    createStationMarker(st);
-                }
-            }
-        }
 
         function createStationMarker(stationData) {
             var latlng = new google.maps.LatLng(stationData.lat(), stationData.lng());
@@ -280,7 +199,7 @@
     <div id="map_canvas">
     </div>
     <!-- THE NEW TIP POPUP -->
-    <div id="newTip" style="background-color: Gray; color: White" title="New bike target"
+    <div id="newTip" style="background-color: Gray; color: White;display:none" title="New bike target"
         data-bind="with:selectedCity()">
         <table>
             <tr>
@@ -288,7 +207,7 @@
                     Title:
                 </td>
                 <td>
-                    <input data-bind="value: $data ? newTip().title : '' " />
+                    <input data-bind="value: $data ? newTip().title : '' " >/
                 </td>
             </tr>
             <tr>
@@ -304,20 +223,7 @@
                     Image:
                 </td>
                 <td>
-                    <input type="radio" name="uploadVSURL" id="enableUpload" onchange="imageUrlUploadSwitch()"
-                        checked="checked" /><label>Upload image</label>
-                    <input type="radio" name="uploadVSURL" onchange="imageUrlUploadSwitch()" /><label>Image
-                        from web</label>
                     <input data-bind="value: $data? newTip().imageUrl : ''" id="providedUrl" />
-                    <form id="uploadForm" action="http://www.bikeincity.com/Uploader/Upload.ashx" method="POST" enctype="multipart/form-data">
-                    <table>
-                        <tr>
-                            <td><input type="file" name="file" /></td>
-                            <td><input type="hidden" name="MAX_FILE_SIZE" value="100000" /></td>
-                            <td><input type="submit" value="Submit" /></td>
-                        </tr>
-                    </table>
-                    </form>
                 </td>
             </tr>
             <tr>
@@ -330,8 +236,7 @@
                 </td>
             </tr>
         </table>
-        <button data-bind='click: $data? addTip : new function(){}'>
-            Add a tip</button>
+        <button data-bind='click: $data? addTip : new function(){}'>add tip</button>
     </div>
     
     <!-- COUNTRY MENU TEMPLATE -->
@@ -342,6 +247,7 @@
                 </ul>
             </li>
     </script>
+
     <!-- THE MENU -->
     <nav id="menu">
         <a href="#" class="trigger">choose city</a>

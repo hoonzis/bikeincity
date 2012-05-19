@@ -39,6 +39,9 @@
     <DesktopBuildPackageLocation>.\BikeInCity.Web.zip</DesktopBuildPackageLocation>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="C5">
       <HintPath>..\packages\Quartz.2.0.0\lib\net40\C5.dll</HintPath>
     </Reference>
@@ -211,11 +214,15 @@
     <Content Include="Img\wp7\find.PNG" />
     <Content Include="Img\wp7\settings.PNG" />
     <Content Include="Mobile\index.html" />
+    <Content Include="Routes.aspx" />
     <Content Include="Scripts\biking.js" />
     <Content Include="Scripts\infobox.js" />
     <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.ui.map.extensions.js" />
+    <Content Include="Scripts\jquery.ui.map.min.js" />
+    <Content Include="Scripts\mapManager.js" />
     <Content Include="Scripts\modernizr-2.0.6.js" />
-    <Content Include="Pages\Admin.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Informations.aspx" />
     <Content Include="Phone.aspx" />
     <Content Include="packages.config" />
@@ -284,11 +291,11 @@
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Services\Bike.svc" />
-    <Content Include="Services\BikeService.svc" />
     <Content Include="Services\Info.svc" />
     <Content Include="Default.aspx" />
     <Content Include="css\master.css" />
     <Content Include="ViewModels\CityViewModel.js" />
+    <Content Include="ViewModels\CountryListViewModel.js" />
     <Content Include="ViewModels\CountryViewModel.js" />
     <Content Include="ViewModels\StationViewModel.js" />
     <Content Include="ViewModels\TipViewModel.js" />
@@ -360,19 +367,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Services\BikeService.svc.cs">
-      <DependentUpon>BikeService.svc</DependentUpon>
+    <Compile Include="Routes.aspx.cs">
+      <DependentUpon>Routes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Routes.aspx.designer.cs">
+      <DependentUpon>Routes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Services\Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Technical\Mapper.cs" />
-    <Compile Include="Pages\Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Informations.aspx.cs">
       <DependentUpon>Informations.aspx</DependentUpon>

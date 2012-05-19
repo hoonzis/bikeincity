@@ -8,27 +8,33 @@
     <script src="Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-ui-1.8.17.min.js" type="text/javascript"></script>
     <script src="Scripts/modernizr.custom.js" type="text/javascript"></script>
+    <script src="/Scripts/knockout-2.0.0.debug.js" type="text/javascript"></script>
+    <script src="/Scripts/knockout.mapping-latest.debug.js" type="text/javascript"></script>
     <script src="Scripts/biking.js" type="text/javascript"></script>
     <script src="Scripts/infobox.js" type="text/javascript"></script>
+    <!--ViewModels-->
+    <script src="ViewModels/CityViewModel.js" type="text/javascript"></script>
+    <script src="ViewModels/CountryListViewModel.js" type="text/javascript"></script>
+    <script src="ViewModels/CountryViewModel.js" type="text/javascript"></script>
+    <script src="ViewModels/StationViewModel.js" type="text/javascript"></script>
+    <script src="ViewModels/TipViewModel.js" type="text/javascript"></script>
     <script type="text/javascript">
+
+    var countryList;
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var nearStations = [];
-    var cities;
-    var map;
-    var currentCity;
+    var map;    
     var stationsArray = [];
     var markersArray = [];
     var routes = [];
     var positionFound = false;
     var currentPosition;
     var latestCenter;
-    var cityService = 'Services/Bike.svc/json/cities';
-    var stationsService = 'Services/Bike.svc/json/city/';
-    var countryService = 'Services/Bike.svc/json/countries';
 
     //set when clicked on the marker
     var currentStation;
+    
     //departure and arrival position of the route
     var departure;
     var arrival;
@@ -56,11 +62,11 @@
         for (var i = 0; i < st.length; i++) {
             var stDist = st[i];
             var freeplaces = 0;
-            if (stDist.station.Total != -1) {
-                freeplaces = stDist.station.Total - stDist.station.Free;
+            if (stDist.station.total() != -1) {
+                freeplaces = stDist.station.total() - stDist.station.free();
             }
             stationsBox.innerHTML += "<li id='station" + i + "' onclick='showStation(this)'><b>" + stDist.dist.toFixed() + "</b> m<b><br/>" 
-            + stDist.station.Free + "</b> bikes / <b>" + freeplaces + "</b> places" +" </li>";
+            + stDist.station.free() + "</b> bikes / <b>" + freeplaces + "</b> places" +" </li>";
         }
     }
 
@@ -77,16 +83,13 @@
     }
 
     function computeRoutes() {
-        if (currentCity == null || currentCity.Stations == null) {
-            return;
-        }
         clearArr(stationsArray);
         clearArr(markersArray);
 
         //erase any routes that were in the list before
         routes = [];
-        var nearestDeparture = nearestStations(departure, 2, function (x) { return x.Free > 0; }, currentCity.Stations);
-        var nearestArrival = nearestStations(arrival, 2, function (x) { return (x.Total == -1) || (x.Total - x.Free) > 0; }, currentCity.Stations);
+        var nearestDeparture = nearestStations(departure, 3, function (x) { return x.free() > 0; }, countryList.selectedCity().stations());
+        var nearestArrival = nearestStations(arrival, 2, function (x) { return (x.total() == -1) || (x.total() - x.free()) > 0; }, countryList.selectedCity().stations());
 
         //erase the routes infobox
         var routesInfoBox = document.getElementById("routes");
@@ -98,8 +101,8 @@
                 var dep = nearestDeparture[i];
                 var arr = nearestArrival[j];
 
-                var from = new google.maps.LatLng(dep.station.Lat, dep.station.Lng);
-                var to = new google.maps.LatLng(arr.station.Lat, arr.station.Lng);
+                var from = new google.maps.LatLng(dep.station.lat(), dep.station.lng());
+                var to = new google.maps.LatLng(arr.station.lat(), arr.station.lng());
 
                 createStationMarker(dep.station);
                 createStationMarker(arr.station);
@@ -145,16 +148,12 @@
         var longitude = position.coords.longitude;
         var latlng = new google.maps.LatLng(latitude, longitude);
         map.setCenter(latlng);
-        if (currentCity == null) {
-            //just wait to be sure that we have all the cities
-            while (cities == null) { }
 
-            if(cities.length>0){
-                currentCity = nearestCity(latitude, longitude, cities);
-                //ok found the city - now get stations
-                getStations(currentCity.Id);
-            }else{
-                //TODO: Show error  - no cities loaded
+        if (countryList.selectedCity() == null) {
+            
+            while (countryList.countries() == null) { }
+            if (countryList.cities().length > 0) {
+                countryList.setSelected(nearestCity(latitude, longitude, countryList.cities()));
             }
         } else {
             findAndShowNearest(currentPosition);
@@ -166,25 +165,11 @@
     }
 
     function setMapToCurrentCity() {
-        var latlng = new google.maps.LatLng(currentCity.Lat, currentCity.Lng);
-        map.setCenter(latlng);
+        var center = new google.maps.LatLng(countryList.selectedCity().lat, countryList.selectedCity().lng);
+        map.setCenter(center);
     }
-
-    function getStations(id) {
-        $.getJSON(stationsService + id + "/stations" + "?callback=?", sObtained);
-    }
-
-    function sObtained(data) {
-        currentCity.Stations = data;
-        addNearestToCenterToMap();
-    }
-
 
     function findAndShowNearest(pos) {
-        if (currentCity == null || currentCity.Stations == null) {
-            return;
-        }
-
         if (currentStation != null) {
             currentStation.info.close();
         }
@@ -192,33 +177,20 @@
         clearArr(lines);
         clearArr(stationsArray);
         
-        nearStations = nearestStations(pos, 5, function (x) { return true; }, currentCity.Stations);
+        nearStations = nearestStations(pos, 5, function (x) { return true; }, countryList.selectedCity().stations());
         addStationsToList('nearStations', nearStations);
-        addStationsToMap(nearStations);
+        addStationsToMap(nearStations, createStationMarker);
         //$("#nearStations").toggle(true);
     }
 
-
-
-    function addStationsToMap(stList) {
-        for (var i = 0; i < stList.length; i++) {
-            var st = stList[i];
-            if (st.dist != null) {
-                createStationMarker(st.station);
-            } else {
-                createStationMarker(st);
-            }
-        }
-    }
-
     function createStationMarker(stationData) {
-        var latlng = new google.maps.LatLng(stationData.Lat, stationData.Lng);
+        var latlng = new google.maps.LatLng(stationData.lat(), stationData.lng());
         var image;
         
-        if (stationData.Free > 2) {
+        if (stationData.free() > 2) {
             image = 'Img/station_green.png';
         }
-        else if (stationData.Free <= 0) {
+        else if (stationData.free() <= 0) {
             image = 'Img/station_red.png';
         }
         else {
@@ -232,14 +204,14 @@
         });
 
         var freeplaces;
-        if (stationData.Total != -1) {
-            freeplaces = stationData.Total - stationData.Free;
+        if (stationData.total() != -1) {
+            freeplaces = stationData.total() - stationData.free();
         }else{
             freeplaces = 'not determined'
         }
 
         
-        var boxText = "<div><div style='margin:3px'>" + stationData.Address + '<br/>bikes:' + stationData.Free + '<br/>places:' + freeplaces + "</div></div>";
+        var boxText = "<div id='boxText'><p class='address'>" + stationData.address() + "</p><p class='free'>bikes:" + stationData.free() + '</p><p class="notfree">places:' + freeplaces + "</p></div>";
 
         var myOptions = {
             content: boxText,
@@ -289,6 +261,7 @@
 
     function createMap() {
         var latlng = new google.maps.LatLng(0.0, 0.0);
+        latestCenter = latlng;
         var myOptions =
         {
             zoom: 14,
@@ -339,14 +312,11 @@
         });
 
         google.maps.event.addListener(map, 'center_changed', function () {
-            
             var center = map.getCenter();
-            if(latestCenter == null){ 
-                latestCenter = center;
-            }else if(delta(center, latestCenter, 0.004)){
+             if (delta(center, latestCenter, 0.008)) {
                 latestCenter = center;
                 addNearestToCenterToMap();
-            }
+             }
         });
     }
 
@@ -357,10 +327,10 @@
             currentStation.info.close();
         }
 
-        if (currentCity != null) {
+        if (countryList.selectedCity() != null) {
             clearArr(stationsArray);
-            nearStations = nearestStations(map.getCenter(), 50, function (x) { return true; }, currentCity.Stations);
-            addStationsToMap(nearStations);
+            nearStations = nearestStations(map.getCenter(), 50, function (x) { return true; }, countryList.selectedCity().stations());
+            addStationsToMap(nearStations,createStationMarker);
         }
     }
     
@@ -381,63 +351,42 @@
             state = 'directions';
             map.setOptions({ draggableCursor: 'crosshair' });
         });
-
-        //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
-        $("a.trigger").click(function () {
-            $(this).next("ul").toggle("fast");
-            $(this).next("ul").siblings("ul").toggle(false);
-        });
-
-        $("a.trigger").next("ul").toggle(false);
     }
 
-    function callbackCities(data) {
-        cities = data;
-        $.each(data, function () {
-            $("." + "country" + this.CountryId).append($("<li id='" + this.Id + " ' onclick='setCity(this)' style='cursor:pointer' />").text(this.Name));
-        });
-
-        $("ul.ul_city").hide();
-
-        //Show submenu on mouseenter
-        $("li.li_country").mouseenter(function () {
-            $(this).find("ul").slideToggle("fast");
-        });
-
-        //Hide submenu on mouseleave
-        $("li.li_country").mouseleave(function () {
-            $(this).find("ul").hide();
-        });
-
-        getCurrentLocation();
-    }
-
-    function setCity(e) {
-        getStations(e.id);
-        currentCity = findCity(e.id, cities);
-        setMapToCurrentCity();
-        clearArr(stationsArray);
-        clearArr(markersArray);
-        //$("a.trigger").next("ul").siblings("ul").toggle(false);
-    }
-
-    function callbackCountry(data) {
-        var countries = $("#countryList");
-        $.each(data, function () {
-            var citiesList = "<ul class='ul_city country" + this.Id + "'/>";
-            var countryLI = "<li class='li_country'>" + this.Name + "</li>";
-            var countryElement = $(countryLI);
-            countryElement.append($(citiesList));
-            countries.append(countryElement);
-        });
-    }
 
     $(document).ready(function () {
         createMap();
         addListeners();
         setClickCallbacks();
-        $.getJSON(countryService + "?callback=?", callbackCountry);
-        $.getJSON(cityService + "?callback=?", callbackCities);
+
+        countryList = new CountryListViewModel();
+
+        //custom subscription to get rid of the map points
+        countryList.selectedCity.subscribe(function (newValue) {
+
+            //hide the menu
+            $("a.trigger").next("ul").toggle(false);
+
+            if (countryList.OldCity != null) {
+                var oldCityTips = countryList.oldCity.tips
+                for (var i = 0; i < markers.length; i++) {
+                    var marker = markers[i];
+                    marker.setMap(null);
+                }
+                markers = [];
+            }
+            setMapToCurrentCity();
+            addNearestToCenterToMap();
+        });
+
+        $("a.trigger").click(function () {
+            $(this).next("ul").toggle("fast").siblings(".menuToggle").hide("fast");
+            $(this).next("div.menuToggle").toggle("fast").siblings(".menuToggle").hide("fast");
+        });
+
+        ko.applyBindings(countryList);
+
+        getCurrentLocation();
     });
     </script>
 </asp:Content>
@@ -445,13 +394,20 @@
     <div id="map_canvas">
     </div>
     <nav id="menu">
-        <a href="#" class="trigger" id="a_countryList">choose city</a><ul id="countryList"
-            style="background-color: #808080">
-        </ul>
-        <a href="#" class="trigger" id="a_nearStations">near stations</a><ul id="nearStations"
-            style="background-color: #808080">
+        <a href="#" class="trigger">choose city</a>
+        <ul data-bind="template: {name:'country-menu-template', foreach: countries,afterRender: afterCountriesRendered}" style="background-color:#808080"></ul>
+        <a href="#" class="trigger" id="a_nearStations">near stations</a><ul id="nearStations" style="background-color: #808080">
         </ul>
         <a href="#" class="trigger" id="a_findRoute">find route</a><ul id="routes" style="background-color: #808080">
             <li>use your mouse to set the arrival and departure</li></ul>
     </nav>
+
+    <!-- COUNTRY MENU TEMPLATE -->
+    <script type="text/html" id="country-menu-template">
+        <li class="li_country"><span data-bind="text: name"></span>
+                <ul id="cityList" data-bind="foreach:cities" class="ul_city" style="display:none">
+                    <li data-bind="click: $root.setSelected" style="cursor:pointer"><span data-bind="text: name"></span></li>
+                </ul>
+            </li>
+    </script>
 </asp:Content>

@@ -7,6 +7,7 @@ namespace BikeInCity.Dto
 {
     public class InformationTipDto
     {
+        public int Id { get; set; }
         public int CityId { get; set; }
         public String Title {get;set;}
         public String Description { get; set; }

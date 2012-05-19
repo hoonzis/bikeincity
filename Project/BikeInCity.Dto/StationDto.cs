@@ -8,6 +8,7 @@ namespace BikeInCity.Dto
 {
   public class StationDto
   {
+      public int CityId { get; set; }
       public int Id { get; set; }
       public string Address { get; set; }
       public double Lat { get;set; }

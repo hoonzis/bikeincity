@@ -18,18 +18,20 @@
     self.stationImageUrl = ko.observable();
     self.bikeImageUrl = ko.observable();
 
-    $.getJSON("/Services/Info.svc/json/city/" + this.id + "/tips", function (allData) {
-        var mappedTips = $.map(allData, function (item) {
-            var tip = new TipViewModel(self.id, self);
-            tip.title(item.Title);
-            tip.description(item.Description);
-            tip.imageUrl(item.ImageUrl);
-            tip.lng(item.Lng);
-            tip.lat(item.Lat);
-            return tip;
+    self.getTips = function () {
+        $.getJSON("/Services/Info.svc/json/city/" + this.id + "/tips", function (allData) {
+            var mappedTips = $.map(allData, function (item) {
+                var tip = new TipViewModel(self.id, self);
+                tip.title(item.Title);
+                tip.description(item.Description);
+                tip.imageUrl(item.ImageUrl);
+                tip.lng(item.Lng);
+                tip.lat(item.Lat);
+                return tip;
+            });
+            self.tips(mappedTips);
         });
-        self.tips(mappedTips);
-    });
+    }
 
     self.getStations = function () {
         $.ajax({

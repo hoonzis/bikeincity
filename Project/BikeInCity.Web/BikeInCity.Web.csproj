@@ -61,14 +61,8 @@
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="LeLog4net">
-      <HintPath>..\packages\le_log4net.1.5.4\lib\4.0\LeLog4net.dll</HintPath>
-    </Reference>
     <Reference Include="le_nlog">
       <HintPath>..\packages\le_nlog.1.5.3\lib\4.0\le_nlog.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
@@ -117,6 +111,7 @@
     <Content Include="App_Data\cityList.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\combres.xml" />
     <Content Include="App_Data\homeport_prague.xml" />
     <Content Include="clientaccesspolicy.xml">
       <SubType>Designer</SubType>

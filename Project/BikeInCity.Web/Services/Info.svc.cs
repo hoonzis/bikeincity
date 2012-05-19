@@ -13,7 +13,7 @@ using System.ServiceModel.Activation;
 using System.Web;
 using System.Configuration;
 using BikeInCity.Core.DataAccess;
-using log4net;
+using Common.Logging;
 using System.Net;
 using AutoMapper;
 

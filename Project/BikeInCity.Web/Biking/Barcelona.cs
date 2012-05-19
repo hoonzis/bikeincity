@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using BikeInCity.Model;
 
 using System.Globalization;
-using log4net;
+using Common.Logging;
 
 namespace BikeInCity.Web.Biking
 {

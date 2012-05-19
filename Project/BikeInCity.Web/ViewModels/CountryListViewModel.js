@@ -6,9 +6,10 @@
     self.oldCity = null;
 
     self.setSelected = function (city) {
-        city.getStations();
         self.oldCity = self.selectedCity();
         self.selectedCity(city);
+        self.selectedCity().getStations();
+        self.selectedCity().getTips();
     };
 
     self.cities = function () {

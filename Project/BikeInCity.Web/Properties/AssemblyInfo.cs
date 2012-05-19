@@ -33,6 +33,3 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-//config for AppHarbor & Logentries
-[assembly: log4net.Config.XmlConfigurator(ConfigFile = "Web.config", Watch = true)]

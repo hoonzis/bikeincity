@@ -20,7 +20,7 @@ using BikeInCity.Core.Services;
 using BikeInCity.Dto;
 using BikeInCity.Core.DataAccess;
 using System.Net;
-using log4net;
+using Common.Logging;
 using AutoMapper;
 
 namespace BikeInCity.Web.Services

@@ -124,7 +124,7 @@
                 }
 
                 createDialog();
-
+                
                 var center = new google.maps.LatLng(countryList.selectedCity().lat, countryList.selectedCity().lng);
                 map.setCenter(center);
 

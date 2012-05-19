@@ -11,7 +11,7 @@ using System.Net;
 using System.Web.Script.Serialization;
 using System.Diagnostics;
 using System.Globalization;
-using log4net;
+using Common.Logging;
 
 namespace BikeInCity.Web.Biking
 {

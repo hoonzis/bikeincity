@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using BikeInCity.Model;
 using System.Xml.Linq;
-using log4net;
+using Common.Logging;
 
 namespace BikeInCity.Web.Biking
 {

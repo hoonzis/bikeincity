@@ -10,7 +10,7 @@ using NHibernate.Linq;
 using Ninject;
 using BikeInCity.Model;
 using BikeInCity.Core.Services;
-using log4net;
+using Common.Logging;
 
 
 namespace BikeInCity.Web.Tasks

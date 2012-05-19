@@ -7,7 +7,7 @@ using System.Net;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using log4net;
+using Common.Logging;
 
 namespace BikeInCity.Web.Biking
 {

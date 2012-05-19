@@ -15,7 +15,7 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
 using System.Data.SqlClient;
-using log4net;
+using Common.Logging;
 using BikeInCity.Dto;
 using AutoMapper;
 

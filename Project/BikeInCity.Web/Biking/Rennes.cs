@@ -22,11 +22,8 @@ namespace BikeInCity.Web.Biking
             //iformatprovide for the convert method
             IFormatProvider provider = CultureInfo.InvariantCulture.NumberFormat;
 
-            //TODO: Rennes Key should go in the configuration section
-            string RENNES_KEY = "1T0DZW0R6JZVGA6";
-
-            //TODO: to be used later?
-            //string RENNES_STATION_URL = "http://data.keolis-rennes.com/xml/?version=1.0&key={0}&cmd=getstation&param[request]=number&param[value]={1}";
+            //Getting the RENNES_APP key from the configuration session
+            string RENNES_KEY = ConfigurationManager.AppSettings["RENNES_KEY"];
 
             String rennesUrl = String.Format("http://data.keolis-rennes.com/xml/?version=1.0&key={0}&cmd=getstation", RENNES_KEY);
             XDocument xDoc = XDocument.Load(rennesUrl);

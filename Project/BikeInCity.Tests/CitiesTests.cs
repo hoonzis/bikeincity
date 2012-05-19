@@ -82,5 +82,15 @@ namespace UnitTests
             var result = target.ProcessCity();
             Assert.AreEqual(result.Count, 1);
         }
+
+        [TestMethod]
+        [Ignore]
+        public void TestRennes()
+        {
+            Rennes target = new Rennes();
+            var result = target.ProcessCity();
+            Assert.AreEqual(result.Count, 1);
+            TestUtils.TestCityResults(result);
+        }
     }
 }

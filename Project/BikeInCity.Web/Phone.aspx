@@ -6,6 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content_text">
+    <p>It would be cool to have one application for each platform. If you are missing one for your platform, than just developt it! Check the project on GitHub.</p>
         <table id="mobile">
             <tbody>
                 <!-- Results table headers -->
@@ -26,8 +27,9 @@
                     <td>
                     </td>
                     <td>
-                        <a href="http://social.zune.net/redirect?type=phoneApp&id=920707d6-5505-e011-9264-00237de2db9e"
-                            class="active">Get from Market</a>
+                        <a href="#api" class="not_active">Develop it</a>
+                        <!--<a href="http://social.zune.net/redirect?type=phoneApp&id=920707d6-5505-e011-9264-00237de2db9e"
+                            class="active">Get from Market</a>-->
                     </td>
                     <td>
                         <a href="#api" class="not_active">Develop it</a>
@@ -61,20 +63,12 @@
                 <div id="description"></div>
             </div>
         </div>
+        <p>The applciation for WP7 is almost ready. Just needs someone with Windows Phone to finish the deployment of the application! Let me know if you are interested!</p>
 
          <div class="line">
          </div>
 
-         <a name="api">
-         <b><p>The API</p></b>
-         There is an API which you can use, in order to develop the application for iPhone, Android or event improve the one for Windows Phone 7. If you are interested, contact me at <b>honza(at)bikeincity.com</b> and I will provide you with the details to get started.
-         </a>
-
          <p></p>
-        
-        
-       
-<!--<object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/ty4kEfzbuis?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/ty4kEfzbuis?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object>-->
         <script type="text/javascript">
             function desc(id) {
                 var auxImageName;

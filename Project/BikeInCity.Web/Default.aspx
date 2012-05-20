@@ -378,6 +378,7 @@
             setMapToCurrentCity();
         });
 
+
         countryList.stationsLoaded.subscribe(function (nV) {
             addNearestToCenterToMap();
         });

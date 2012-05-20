@@ -13,6 +13,7 @@
     self.oldTip = null;
     self.lat = data.Lat;
     self.lng = data.Lng;
+    self.stationsLoaded = ko.observable();
 
     self.description = ko.observable();
     self.stationImageUrl = ko.observable();
@@ -30,6 +31,7 @@
                 return tip;
             });
             self.tips(mappedTips);
+            self.stationsLoaded(true);
         });
     }
 

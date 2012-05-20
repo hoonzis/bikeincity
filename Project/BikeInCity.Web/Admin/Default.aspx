@@ -40,11 +40,8 @@
                 </td>
                 
             </tr>
-            <tr>
-                <td><asp:Label ID="lblCityStatuses" runat="server" />
-                </td>
-            </tr>
     </table>
+    <asp:GridView ID="cityStatusGrid" runat="server" />
     <asp:TextBox ID="secretTextBox" Text="secret" Width="200" runat="server" />
     <asp:Button ID="btnJsonBackup" OnClick="BackupToJson_Click" Text="Backup to Json"
         runat="server" />

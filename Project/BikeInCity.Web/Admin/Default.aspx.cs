@@ -46,12 +46,8 @@ namespace BikeInCity.Web.Pages
                 lblOutput.Text = "Cities count: " + citiesCount + " Stations Count: " + stationCount + " Repeat interval: " + Global.RepeatInterval;
                 lblSchedulerState.Text = Global.Scheduler.IsStarted ? Global.Scheduler.InStandbyMode ? "StandBy" : "Started" : "Stopped";
 
-                StringBuilder builder = new StringBuilder();
-                foreach (var cityStatus in Global.CityStatuses)
-                {
-                    builder.Append(cityStatus.Key + " - " + ((cityStatus.Value.Length > 30) ? cityStatus.Value.Substring(0, 30) : cityStatus.Value + Environment.NewLine));
-                }
-                lblCityStatuses.Text = builder.ToString();
+                cityStatusGrid.DataSource = Global.CityStatuses;
+                cityStatusGrid.DataBind();
             }
             catch (SqlException ex)
             {

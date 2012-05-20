@@ -147,7 +147,7 @@
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         var latlng = new google.maps.LatLng(latitude, longitude);
-        map.setCenter(latlng);
+        //map.setCenter(latlng);
 
         if (countryList.selectedCity() == null) {
             
@@ -376,8 +376,12 @@
                 markers = [];
             }
             setMapToCurrentCity();
+        });
+
+        countryList.stationsLoaded.subscribe(function (nV) {
             addNearestToCenterToMap();
         });
+
 
         $("a.trigger").click(function () {
             $(this).next("ul").toggle("fast").siblings(".menuToggle").hide("fast");

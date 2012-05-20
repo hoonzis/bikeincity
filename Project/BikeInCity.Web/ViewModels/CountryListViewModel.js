@@ -4,10 +4,16 @@
     self._cities = [];
     self.selectedCity = ko.observable();
     self.oldCity = null;
+    self.stationsLoaded = ko.observable();
 
     self.setSelected = function (city) {
         self.oldCity = self.selectedCity();
         self.selectedCity(city);
+
+        self.selectedCity().stationsLoaded.subscribe(function (newValue) {
+            self.stationsLoaded(true);
+        });
+
         self.selectedCity().getStations();
         self.selectedCity().getTips();
     };

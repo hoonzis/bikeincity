@@ -30,8 +30,11 @@ namespace BikeInCity.Web.Services
     public class Bike
     {
         private readonly ILog _log = LogManager.GetLogger(typeof(Bike));
+
+
         private IRepository _repository;
 
+       
         public Bike()
         {
             _repository = Global.GetObject<IRepository>();

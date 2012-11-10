@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Ninject;
 using BikeInCity.Core.Services;
-using Ninject.Web;
 using BikeInCity.Web.Technical;
 using BikeInCity.DataAccess.Configuration;
 using BikeInCity.Core.DataAccess;
@@ -21,7 +20,7 @@ using AutoMapper;
 
 namespace BikeInCity.Web.Pages
 {
-    public partial class Default : PageBase
+    public partial class Default : Page
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(Default));
 

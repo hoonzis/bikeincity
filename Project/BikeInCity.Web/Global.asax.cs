@@ -24,12 +24,18 @@ using NHibernate.Linq;
 using Common.Logging;
 using AutoMapper;
 using BikeInCity.Dto;
+using Ninject.Web.Common;
+using System.Web.Routing;
+using System.ServiceModel.Activation;
+using Ninject.Extensions.Wcf;
+using BikeInCity.Web.Services;
 
 namespace BikeInCity.Web
 {
     public class Global : NinjectHttpApplication
     {
         private static IKernel _kernel;
+            
         private static IScheduler _scheduler;
         public static int RepeatInterval { get; set; }
         private readonly ILog _log = LogManager.GetLogger(typeof(Global));
@@ -67,9 +73,11 @@ namespace BikeInCity.Web
             }
         }
 
+        
         protected override void OnApplicationStarted()
         {
             base.OnApplicationStarted();
+            
             _log.Info("Application started! Cities will be added to the scheduler");
             AddCitiesToScheduler();
             Mapper.CreateMap<City, CityDto>().ForMember(x => x.CountryId, opt => opt.MapFrom(src => src.Country.Id));
@@ -77,6 +85,7 @@ namespace BikeInCity.Web
             Mapper.CreateMap<Country, CountryDto>();
             Mapper.CreateMap<InformationTip, InformationTipDto>();
         }
+
 
         public static T GetObject<T>()
         {
@@ -133,6 +142,7 @@ namespace BikeInCity.Web
             }
         }
 
+        
         protected override IKernel CreateKernel()
         {
             var module = new BICWebModule();
@@ -169,30 +179,6 @@ namespace BikeInCity.Web
                 .Build();
 
             _scheduler.ScheduleJob(jobDetail, trigger); 
-        }
-
-        void Session_Start(object sender, EventArgs e)
-        {
-            // Redirect mobile users to the mobile home page
-            HttpRequest httpRequest = HttpContext.Current.Request;
-            if (httpRequest.Browser.IsMobileDevice)
-            {
-                string path = httpRequest.Url.PathAndQuery;
-                bool isOnMobilePage = path.StartsWith("/Mobile/",
-                                       StringComparison.OrdinalIgnoreCase);
-                if (!isOnMobilePage)
-                {
-                    string redirectTo = "~/Mobile/";
-
-                    // Could also add special logic to redirect from certain 
-                    // recognized pages to the mobile equivalents of those 
-                    // pages (where they exist). For example,
-                    // if (HttpContext.Current.Handler is UserRegistration)
-                    //     redirectTo = "~/Mobile/Register.aspx";
-
-                    HttpContext.Current.Response.Redirect(redirectTo);
-                }
-            }
         }
     }
 }
